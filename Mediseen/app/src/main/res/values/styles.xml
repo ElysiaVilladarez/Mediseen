@@ -3,6 +3,54 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--Fonts for TextViewPlus-->
+    <style name="signikaBold" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/Signika-Bold_0.ttf</item>
+    </style>
+    <style name="signikaLight" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/Signika-Light_0.ttf</item>
+    </style>
+    <style name="signikaRegular" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/Signika-Regular_0.ttf</item>
+    </style>
+    <style name="signikaSemibold" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/Signika-Semibold_0.ttf</item>
+    </style>
+    <style name="signikaNegativeBold" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SignikaNegative-Bold_0.ttf</item>
+    </style>
+    <style name="signikaNegativeLight" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SignikaNegative-Light_0.ttf</item>
+    </style>
+    <style name="signikaNegativeRegular" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SignikaNegative-Regular_0.ttf</item>
+    </style>
+    <style name="signikaNegativeSemibold" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SignikaNegative-Semibold_0.ttf</item>
+    </style>
+    <style name="sourceSansProBlack" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SourceSansPro-Black.otf</item>
+    </style>
+    <style name="sourceSansProBlackIt" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SourceSansPro-BlackIt.otf</item>
+    </style>
+
+    <!--Changing font size of TabLayout Header-->
+    <style name="CustomTextSize" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">20dp</item>
+    </style>
+
+
 
 </resources>
