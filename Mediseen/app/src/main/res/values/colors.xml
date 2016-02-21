@@ -4,7 +4,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="headerColor">#006699</color>
-    <color name="tabSelected">#FFFFFF</color>
+    <!--Background Colors-->
+    <color name="backgroundGreen">#0BB794</color>
+    <color name="backgroundGray">#F4F4F4</color>
+
+    <color name="buttonWhenPressed">#53CCB2</color>
+
+    <!--TabLayout of PillTracker Colors-->
+    <color name="tabSelected">#F4F4F4</color>
     <color name="tabUnselected">#DDDDDD</color>
+    <color name="headerColor">#144377</color>
 </resources>

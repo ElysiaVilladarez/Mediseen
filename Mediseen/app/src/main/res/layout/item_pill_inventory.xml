@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/backgroundGray">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:background="@android:color/white">
+        <ImageView
+            android:layout_width="@dimen/circleLogoSize"
+            android:layout_height="@dimen/circleLogoSize"
+            android:src="@drawable/logomark"
+            android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/smalMargin">
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProBlack"
+                android:id="@+id/pillName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/headerTextSize1"
+                android:text="MEDICINE"/>
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/signikaLight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/dosage"
+                android:text="1 pill, once a day"
+                android:textSize="@dimen/headerTextSize1"/>
+        </LinearLayout>
+
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/signikaNegativeRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/amountInInventory"
+            android:layout_margin="@dimen/smalMargin"
+            android:text="20"
+            android:textSize="50dp"/>
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

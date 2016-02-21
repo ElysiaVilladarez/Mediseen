@@ -52,7 +52,6 @@ public class PillTracker extends AppCompatActivity {
                     CustomFontHelper.setCustomFont(header, HEADER_FONT, getApplicationContext());
                     header.setTextColor(ContextCompat.getColor(getApplicationContext(),
                             R.color.headerColor));
-                    header.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 90);
                 }
             }
         }

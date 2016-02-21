@@ -12,15 +12,15 @@ public class Pill extends RealmObject {
     private String dosage;
     private int amountInInventory;
     private int amountTillShopping;
-    private RealmList<Pill> editHistories;
+   // private RealmList<Pill> editHistories;
 
-    public RealmList<Pill> getEditHistories() {
-        return editHistories;
-    }
-
-    public void setEditHistories(RealmList<Pill> editHistories) {
-        this.editHistories = editHistories;
-    }
+//    public RealmList<Pill> getEditHistories() {
+//        return editHistories;
+//    }
+//
+//    public void setEditHistories(RealmList<Pill> editHistories) {
+//        this.editHistories = editHistories;
+//    }
 
     public String getName() {
         return name;

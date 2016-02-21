@@ -51,6 +51,45 @@
         <item name="android:textSize">20dp</item>
     </style>
 
+    <!--Styles for Views-->
+        <!--Buttons-->
+    <style name="longButtonStyle">
+        <item name="font">@style/signikaNegativeRegular</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_width">190dp</item>
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:background">@drawable/button_pressed</item>
+    </style>
+
+    <style name="shortButtonStyle">
+        <item name="font">@style/signikaNegativeRegular</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_width">85dp</item>
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:background">@drawable/button_pressed</item>
+    </style>
+
+
+    <!--Big Text-->
+    <style name="bigTextStyle">
+        <item name="font">@style/signikaRegular</item>
+        <item name="android:textColor">@color/headerColor</item>
+        <item name="android:textSize">33dp</item>
+    </style>
+
+    <!--TextField-->
+    <style name="textField">
+        <item name="font">@style/signikaRegular</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorHint">@color/tabUnselected</item>
+        <item name="android:background">@drawable/text_field_border</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:layout_width">290dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
 
 
 </resources>
