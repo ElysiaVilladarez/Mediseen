@@ -74,18 +74,27 @@
         </LinearLayout>
     </LinearLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/pillInventoryLayout"
+        android:orientation="vertical"
         android:visibility="gone">
         <android.support.v7.widget.RecyclerView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/pillInventory"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </FrameLayout>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:scrollbars="vertical" />
+        <mediseen.customtextview.ButtonPlus
+            android:id="@+id/addPillsButton2"
+            style="@style/longButtonStyle"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="@dimen/buttonMargin"
+            android:text="@string/buttonTextAddPills"
+            android:visibility="visible" />
+    </LinearLayout>
 
     <mediseen.customtextview.ButtonPlus
         android:id="@+id/addPillsButton"

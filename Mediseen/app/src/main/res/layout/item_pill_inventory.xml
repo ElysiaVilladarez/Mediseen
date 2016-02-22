@@ -1,53 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/backgroundGray">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundGray"
+    android:paddingBottom="@dimen/largeMargin"
+    android:paddingTop="@dimen/largeMargin">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:background="@android:color/white">
-        <ImageView
-            android:layout_width="@dimen/circleLogoSize"
-            android:layout_height="@dimen/circleLogoSize"
-            android:src="@drawable/logomark"
-            android:layout_gravity="center"/>
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/smalMargin">
-            <mediseen.customtextview.TextViewPlus
-                style="@style/sourceSansProBlack"
-                android:id="@+id/pillName"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="@dimen/headerTextSize1"
-                android:text="MEDICINE"/>
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/circleLogoSize"
+                android:layout_height="@dimen/circleLogoSize"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/smalMargin"
+                android:orientation="vertical">
+
+                <mediseen.customtextview.TextViewPlus
+                    android:id="@+id/pillName"
+                    style="@style/sourceSansProBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="MEDICINE"
+                    android:textSize="@dimen/headerTextSize1" />
+
+                <mediseen.customtextview.TextViewPlus
+                    android:id="@+id/dosage"
+                    style="@style/signikaLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="1 pill, once a day"
+                    android:textSize="@dimen/headerTextSize1" />
+            </LinearLayout>
+
 
             <mediseen.customtextview.TextViewPlus
-                style="@style/signikaLight"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/dosage"
-                android:text="1 pill, once a day"
-                android:textSize="@dimen/headerTextSize1"/>
+                android:id="@+id/amountInInventory"
+                style="@style/signikaNegativeRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/smalMargin"
+                android:text="20"
+                android:textSize="50dp" />
+
         </LinearLayout>
-
-
-        <mediseen.customtextview.TextViewPlus
-            style="@style/signikaNegativeRegular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/amountInInventory"
-            android:layout_margin="@dimen/smalMargin"
-            android:text="20"
-            android:textSize="50dp"/>
-
+        <mediseen.customtextview.ButtonPlus
+            style="@style/shortButtonStyle"
+            android:id="@+id/editButton"
+            android:text="EDIT"
+            android:layout_gravity="end"/>
     </LinearLayout>
-
 
 
 </FrameLayout>

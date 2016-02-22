@@ -7,6 +7,7 @@ package mediseen.pilltracker;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
@@ -51,7 +52,7 @@ public class InventoryFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_inventory, container, false);
         final ButtonPlus addPillsButton = (ButtonPlus) rootView.findViewById(R.id.addPillsButton);
         final LinearLayout addingPillsLayout = (LinearLayout) rootView.findViewById(R.id.addingPillsLayout);
-        final FrameLayout pillInventoryLayout = (FrameLayout) rootView.findViewById(R.id.pillInventoryLayout);
+        final LinearLayout pillInventoryLayout = (LinearLayout) rootView.findViewById(R.id.pillInventoryLayout);
 
         if (true) {
             FrameLayout wholeFrame = (FrameLayout) rootView.findViewById(R.id.wholeFrame);
@@ -113,8 +114,11 @@ public class InventoryFragment extends Fragment {
         lol.add("MEDICINE1");
         lol.add("MEDICINE2");
         RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.pillInventory);
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
+        mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         InventoryAdapter adapter = new InventoryAdapter(getActivity(), lol);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(adapter);
         return rootView;
     }

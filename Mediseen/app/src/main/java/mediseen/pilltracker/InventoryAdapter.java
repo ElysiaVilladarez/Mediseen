@@ -16,26 +16,30 @@ import mediseen.work.pearlsantos.mediseen.R;
 /**
  * Created by elysi on 2/21/2016.
  */
-public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.ViewHolder> {
-//    private RealmResults<Pill> mDataset;
+public class InventoryAdapter extends RecyclerView
+        .Adapter<InventoryAdapter
+        .ViewHolder> {
     private ArrayList<String> mDataset;
     private Context context;
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextViewPlus pillName, dosage, amountInInventory;
-
         public ViewHolder(View itemView) {
             super(itemView);
-            pillName = (TextViewPlus) itemView.findViewById(R.id.pillName);
-            dosage = (TextViewPlus) itemView.findViewById(R.id.dosage);
-            amountInInventory = (TextViewPlus) itemView.findViewById(R.id.amountInInventory);
+//            pillName = (TextViewPlus) itemView.findViewById(R.id.pillName);
+//            dosage = (TextViewPlus) itemView.findViewById(R.id.dosage);
+//            amountInInventory = (TextViewPlus) itemView.findViewById(R.id.amountInInventory);
 
         }
 
+        //Setting function for clicking an item
+        @Override
+        public void onClick(View v) {
+        }
     }
 
-    public InventoryAdapter(Context context, ArrayList<String>myDataset) {
+    public InventoryAdapter(Context context, ArrayList<String> myDataset) {
         this.context = context;
         mDataset = myDataset;
 
@@ -51,22 +55,9 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.pillName.setText(mDataset.get(position));
-        holder.dosage.setText(mDataset.get(position));
-        holder.amountInInventory.setText("20");
-        System.out.println("ENTERED HERE ON BIND");
+    public void onBindViewHolder(ViewHolder holderT, int position) {
+        final ViewHolder holder = holderT;
     }
-
-//    public void addItem(Pill dataObj, int index) {
-//        mDataset.add(dataObj);
-//        notifyItemInserted(index);
-//    }
-//
-//    public void deleteItem(int index) {
-//        mDataset.remove(index);
-//        notifyItemRemoved(index);
-//    }
     @Override
     public int getItemCount() {
         return mDataset.size();
