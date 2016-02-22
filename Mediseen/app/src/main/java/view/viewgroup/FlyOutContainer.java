@@ -36,7 +36,7 @@ public class FlyOutContainer extends LinearLayout {
     protected Handler menuAnimationHandler = new Handler(); //executes runnable
 
     //Animation constants
-    private static final int menuAnimationDuration = 1000; //1 second
+    private static final int menuAnimationDuration = 700; //1 second
     private static final int menuAnimationPollingInterval = 16; //an update on the UI is "reported" every 16 ms
 
     public FlyOutContainer(Context context, AttributeSet attrs, int defStyle) {

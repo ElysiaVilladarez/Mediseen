@@ -4,6 +4,7 @@ package mediseen.pilltracker;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
@@ -17,7 +18,7 @@ import android.widget.TextView;
 import mediseen.customtextview.CustomFontHelper;
 import mediseen.work.pearlsantos.mediseen.R;
 
-public class PillTracker extends AppCompatActivity {
+public class PillTracker extends FragmentActivity {
 
     private PillTrackerAdapter mPillTrackerAdapter;
     private String HEADER_FONT = "fonts/SourceSansPro-Black.otf";
