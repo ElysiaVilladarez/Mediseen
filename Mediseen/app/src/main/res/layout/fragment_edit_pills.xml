@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:id="@+id/addingPillsLayout"
+    android:layout_gravity="center"
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:orientation="vertical">
+
+    <EditText
+        style="@style/textField"
+        android:hint="Name of medicine"
+        android:id="@+id/pillName"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/textFieldMargin" />
+
+    <EditText
+        style="@style/textField"
+        android:hint="Dosage"
+        android:id="@+id/dosage"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/textFieldMargin" />
+
+    <EditText
+        style="@style/textField"
+        android:hint="Amount in inventory"
+        android:id="@+id/amountInInventory"
+        android:inputType="number"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/textFieldMargin" />
+
+    <mediseen.customtextview.ButtonPlus
+        style="@style/longButtonStyle"
+        android:id="@+id/viewHistoryButton"
+        android:layout_margin="@dimen/largeMargin"
+        android:text="@string/viewHistory" />
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+        <mediseen.customtextview.ButtonPlus
+            style="@style/shortButtonStyle"
+            android:id="@+id/cancelButton"
+            android:layout_margin="@dimen/smallButtonsDistance"
+            android:text="@string/cancel" />
+
+        <mediseen.customtextview.ButtonPlus
+            style="@style/shortButtonStyle"
+            android:id="@+id/saveButton"
+            android:layout_margin="@dimen/smallButtonsDistance"
+            android:text="@string/save" />
+
+    </LinearLayout>
+</LinearLayout>

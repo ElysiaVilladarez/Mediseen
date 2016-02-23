@@ -3,7 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="textFieldMargin">10dp</dimen>
+    <dimen name="textFieldMargin">17dp</dimen>
+    <dimen name="smallButtonsDistance">10dp</dimen>
     <dimen name="largeMargin">35dp</dimen>
     <dimen name="buttonMargin">40dp</dimen>
     <dimen name="buttonTextSize">15dp</dimen>

@@ -9,8 +9,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -72,11 +70,12 @@ public class PillTracker extends FragmentActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return InventoryFragment.newInstance(position);
+                    return new RootFragment();
                 case 1:
-                    return ShoppingListFragment.newInstance(position);
+                    return new ShoppingListFragment();
             }
             return null;
+
         }
 
         @Override
