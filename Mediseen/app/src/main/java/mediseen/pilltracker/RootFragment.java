@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import mediseen.healthhistory.NotesFragment;
 import mediseen.pilltracker.inventoryFragments.InventoryFragment;
 import mediseen.work.pearlsantos.mediseen.R;
 
@@ -22,8 +23,13 @@ public class RootFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "POSITION";
     private static final String TAG = "RootFragment";
 
+    public static RootFragment newInstance(String fragmentDisplay){
+        RootFragment rf = new RootFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_SECTION_NUMBER, fragmentDisplay);
+        rf.setArguments(args);
+        return rf;
 
-    public RootFragment() {
     }
 
     @Override
@@ -38,7 +44,12 @@ public class RootFragment extends Fragment {
 		 * When this container fragment is created, we fill it with our first
 		 * "real" fragment
 		 */
-        transaction.replace(R.id.root_frame, new InventoryFragment());
+        String fragment = getArguments().getString(ARG_SECTION_NUMBER);
+        if(fragment.equals("Inventory")) {
+            transaction.replace(R.id.root_frame, new InventoryFragment());
+        } else if (fragment.equals("Notes")){
+            transaction.replace(R.id.root_frame, new NotesFragment());
+        }
 
 
         transaction.commit();

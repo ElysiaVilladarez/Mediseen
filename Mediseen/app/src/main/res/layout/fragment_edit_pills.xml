@@ -12,14 +12,15 @@
         android:hint="Name of medicine"
         android:id="@+id/pillName"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="@dimen/textFieldMargin" />
+        android:layout_margin="@dimen/textFieldMargin"/>
 
     <EditText
         style="@style/textField"
         android:hint="Dosage"
         android:id="@+id/dosage"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="@dimen/textFieldMargin" />
+        android:layout_margin="@dimen/textFieldMargin"
+        android:scrollbarStyle="outsideOverlay"/>
 
     <EditText
         style="@style/textField"

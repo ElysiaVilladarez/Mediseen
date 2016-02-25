@@ -63,7 +63,7 @@
         <mediseen.customtextview.ButtonPlus
             style="@style/shortButtonStyle"
             android:id="@+id/editButton"
-            android:text="EDIT"
+            android:text="@string/edit"
             android:layout_gravity="end"/>
     </LinearLayout>
 

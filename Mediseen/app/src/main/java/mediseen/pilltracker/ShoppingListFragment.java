@@ -18,6 +18,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import mediseen.CreateNoDisplay;
 import mediseen.customtextview.ButtonPlus;
 import mediseen.customtextview.TextViewPlus;
 import mediseen.pilltracker.inventoryFragments.DividerItemDecoration;
@@ -29,7 +30,7 @@ import mediseen.work.pearlsantos.mediseen.R;
 
 public class ShoppingListFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "POSITION";
-    private static boolean noShop = false;
+    private static boolean noShop = true;
 
     public ShoppingListFragment() {
     }
@@ -44,48 +45,8 @@ public class ShoppingListFragment extends Fragment {
             shoppingListLayout.setVisibility(View.GONE);
             FrameLayout wholeFrame = (FrameLayout)rootView.findViewById(R.id.wholeFrame);
 
-            final FrameLayout noPillsLayout = new FrameLayout(getActivity());
-            FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT);
-            noPillsLayout.setLayoutParams(layoutParams);
+            CreateNoDisplay.noDisplay(getResources().getString(R.string.noShoppingList), wholeFrame, this);
 
-            ImageView logo = new ImageView(getActivity());
-            Picasso.with(getActivity()).load(R.drawable.logomark).resizeDimen(R.dimen.logoMarkWidth,
-                    R.dimen.logoMarkHeight).into(logo);
-            FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT);
-            layoutParams2.gravity= Gravity.TOP|Gravity.CENTER_HORIZONTAL;
-            logo.setLayoutParams(layoutParams2);
-
-
-            TextViewPlus noPillsText = new TextViewPlus(getActivity());
-            noPillsText.setText(R.string.noShoppingList);
-            noPillsText.setGravity(Gravity.START);
-            if(Build.VERSION.SDK_INT < 23){
-                noPillsText.setTextAppearance(getActivity(), R.style.bigTextStyle);
-            }
-            else{
-                noPillsText.setTextAppearance(R.style.bigTextStyle);
-            }
-            FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT);
-            layoutParams3.gravity=Gravity.CENTER;
-            noPillsText.setLayoutParams(layoutParams3);
-
-            ButtonPlus test = new ButtonPlus(getActivity());
-            test.setText("TEST");
-
-            test.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ChangeVisibilityHelper.changeVisibility(shoppingListLayout, noPillsLayout);
-                }
-            });
-            noPillsLayout.addView(logo);
-            noPillsLayout.addView(noPillsText);
-            noPillsLayout.addView(test);
-
-            wholeFrame.addView(noPillsLayout);
         }
         else{
             shoppingListLayout.setVisibility(View.VISIBLE);

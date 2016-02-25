@@ -14,4 +14,6 @@
     <color name="tabSelected">#F4F4F4</color>
     <color name="tabUnselected">#DDDDDD</color>
     <color name="headerColor">#144377</color>
+
+    <color name="itemNotesShadow">#9FB4C9</color>
 </resources>

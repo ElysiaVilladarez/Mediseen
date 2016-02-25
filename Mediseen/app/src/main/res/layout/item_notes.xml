@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundGray"
+    android:paddingBottom="@dimen/largeMargin"
+    android:paddingTop="@dimen/largeMargin">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+        <LinearLayout
+            android:layout_width="@dimen/textFieldWidth"
+            android:background="@color/itemNotesShadow"
+            android:layout_height="10dp"/>
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProBlack"
+            android:textSize="@dimen/headerTextSize1"
+            android:text="CHECK UP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/smalMargin"
+            android:paddingRight="@dimen/smalMargin"
+            android:paddingTop="@dimen/smalMargin"
+            android:paddingBottom="3dp"/>
+        <mediseen.customtextview.TextViewPlus
+            android:text="Monday, February 30, 2016"
+            android:paddingLeft="@dimen/smalMargin"
+            android:paddingRight="@dimen/smalMargin"
+            android:paddingBottom="@dimen/smalMargin"
+            style="@style/signikaLight"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</FrameLayout>
