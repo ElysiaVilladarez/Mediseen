@@ -1,54 +1,44 @@
-package mediseen.pilltracker.inventoryFragments;
+package mediseen.healthhistory;
 
-/**
- * Created by elysi on 2/20/2016.
- */
-
-import android.content.res.TypedArray;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
-import android.view.ContextThemeWrapper;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import mediseen.CreateNoDisplay;
 import mediseen.customtextview.ButtonPlus;
-import mediseen.customtextview.CustomFontHelper;
-import mediseen.customtextview.TextViewPlus;
-import mediseen.pilltracker.ChangeVisibilityHelper;
+import mediseen.pilltracker.inventoryFragments.DividerItemDecoration;
+import mediseen.pilltracker.inventoryFragments.EditPillsFragment;
+import mediseen.pilltracker.inventoryFragments.InventoryAdapter;
 import mediseen.work.pearlsantos.mediseen.R;
 
-public class InventoryFragment extends Fragment {
-    public static boolean noPills = true;
-    private final String TYPEFACE = "fonts/SignikaNegative-Regular_0.ttf";
-
-    @Override
+/**
+ * Created by elysi on 2/23/2016.
+ */
+public class NotesFragment extends Fragment {
+    public static boolean noNotes = false;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                         Bundle savedInstanceState){
+        //Shares the same xml layout as InventoryFragment
         final View rootView = inflater.inflate(R.layout.fragment_inventory, container, false);
-        LinearLayout pillInventoryLayout = (LinearLayout) rootView.findViewById(R.id.pillInventoryLayout);
-        ButtonPlus addPillsButton = (ButtonPlus) rootView.findViewById(R.id.addPillsButton);
-
+        LinearLayout healthHisto = (LinearLayout) rootView.findViewById(R.id.pillInventoryLayout);
+        ButtonPlus addNotesButton = (ButtonPlus) rootView.findViewById(R.id.addPillsButton);
+        addNotesButton.setText(R.string.buttonTextAddNotes);
         ArrayList<String> lol = new ArrayList<>();
 
-        addPillsButton.setOnClickListener(new View.OnClickListener() {
+
+        addNotesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction trans = getFragmentManager()
@@ -57,7 +47,7 @@ public class InventoryFragment extends Fragment {
 				 * IMPORTANT: We use the "root frame" defined in
 				 * "root_fragment.xml" as the reference to replace fragment
 				 */
-                trans.replace(R.id.root_frame, new AddPillsFragment());
+                trans.replace(R.id.root_frame, new AddNotesFragment());
 
 				/*
 				 * IMPORTANT: The following lines allow us to add the fragment
@@ -67,19 +57,19 @@ public class InventoryFragment extends Fragment {
                 trans.commit();
             }
         });
+        if(noNotes){
 
-        if (noPills) {
-            pillInventoryLayout.setVisibility(View.GONE);
-            addPillsButton.setVisibility(View.VISIBLE);
+            healthHisto.setVisibility(View.GONE);
+            addNotesButton.setVisibility(View.VISIBLE);
             FrameLayout wholeFrame = (FrameLayout) rootView.findViewById(R.id.wholeFrame);
 
-            CreateNoDisplay.noDisplay(getResources().getString(R.string.noPills), wholeFrame, this);
+            CreateNoDisplay.noDisplay(getResources().getString(R.string.noNotes), wholeFrame, this);
 
 
 
         } else {
-            pillInventoryLayout.setVisibility(View.VISIBLE);
-            addPillsButton.setVisibility(View.VISIBLE);
+            healthHisto.setVisibility(View.VISIBLE);
+            addNotesButton.setVisibility(View.VISIBLE);
 
             lol.add("MEDICINE1");
             lol.add("MEDICINE2");
@@ -87,12 +77,12 @@ public class InventoryFragment extends Fragment {
             mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
             mRecyclerView.setHasFixedSize(true);
             mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-            InventoryAdapter adapter = new InventoryAdapter(getActivity(), lol, this);
+            NotesFragmentAdapter adapter = new NotesFragmentAdapter(getActivity(), lol, this);
             mRecyclerView.setItemAnimator(new DefaultItemAnimator());
             mRecyclerView.setAdapter(adapter);
 
-        }
 
+        }
 
         return rootView;
     }

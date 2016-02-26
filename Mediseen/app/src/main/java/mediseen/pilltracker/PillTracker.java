@@ -70,7 +70,7 @@ public class PillTracker extends FragmentActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new RootFragment();
+                    return RootFragment.newInstance("Inventory");
                 case 1:
                     return new ShoppingListFragment();
             }

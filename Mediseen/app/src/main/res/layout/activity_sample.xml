@@ -46,7 +46,7 @@
                 android:gravity="center"
                 android:text="mediseen"
                 android:textColor="#FFFFFF"
-                android:textSize="@dimen/headerTextSize2" />
+                android:textSize="@dimen/titleTextSize" />
         </android.support.v7.widget.Toolbar>
 
         <TextView

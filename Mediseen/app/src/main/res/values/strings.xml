@@ -9,11 +9,13 @@
     <string name="viewHistory">VIEW EDIT HISTORY</string>
     <string name="cancel">CANCEL</string>
     <string name="save">SAVE</string>
+    <string name="edit">EDIT</string>
 
     <!--fragment_inventory.xml strings-->
     <string name="noPills">Sorry, there are\ncurrently no items\nin the inventory.\nAdd one now!</string>
     <string name="buttonTextAddPills">ADD PILLS</string>
-
+    <string name="noNotes">Sorry, there are\ncurrently no records\nor notes to display.\nAdd one now!</string>
+    <string name="buttonTextAddNotes">ADD NOTES</string>
     <!--fragment_shopping_list.xml strings-->
     <string name="noShoppingList">Sorry, there are\ncurrently no items\nin the shopping list</string>
 
