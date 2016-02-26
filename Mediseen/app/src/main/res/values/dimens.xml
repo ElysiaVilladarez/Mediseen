@@ -14,6 +14,7 @@
 
     <dimen name="circleLogoSize">30dp</dimen>
     <dimen name="headerTextSize1">20dp</dimen>
+    <dimen name="headerTextSize2">35dp</dimen>
     <dimen name="smalMargin">15dp</dimen>
 
 </resources>

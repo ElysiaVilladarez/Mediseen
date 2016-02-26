@@ -8,18 +8,19 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="mediseen.work.pearlsantos.mediseen.SampleActivity"
+            android:name="mediseen.work.pearlsantos.mediseen.MainActivity"
             android:label="@string/app_name">
-        </activity>
-        <activity
-            android:name="mediseen.pilltracker.PillTracker"
-            android:label="@string/title_activity_pill_tracker"
-            android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="mediseen.pilltracker.PillTracker"
+            android:label="@string/title_activity_pill_tracker"
+            android:theme="@style/AppThemeNoActionBar">
+
 
         </activity>
     </application>
