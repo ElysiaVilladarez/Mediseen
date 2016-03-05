@@ -17,6 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import mediseen.DialogSize;
 import mediseen.customtextview.ButtonPlus;
 import mediseen.customtextview.TextViewPlus;
 import mediseen.database.Pill;
@@ -100,14 +101,8 @@ public class ShoppingListAdapter extends RecyclerView
 
                 dialog.show();
 
-                DisplayMetrics displaymetrics = new DisplayMetrics();
-                frag.getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-                int height = displaymetrics.heightPixels;
-                int width = displaymetrics.widthPixels;
 
-                Window d = dialog.getWindow();
-                d.setLayout(height / 2, width);
-
+                DialogSize.setSize(frag.getActivity(), dialog);
             }
         });
     }

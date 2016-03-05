@@ -30,7 +30,6 @@ public class NotesFragmentAdapter extends RecyclerView
     private RealmResults<Notes> mDataset;
     private Context context;
     private Fragment frag;
-    private int pos;
 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -47,7 +46,7 @@ public class NotesFragmentAdapter extends RecyclerView
         public void onClick(View v) {
             v.getBackground().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
             v.invalidate();
-            FragmentReplace.replaceFragment(frag, R.id.root_frame, ViewNoteFragment.newInstance(pos));
+            FragmentReplace.replaceFragment(frag, R.id.root_frame, ViewNoteFragment.newInstance(getAdapterPosition()));
 
         }
     }
@@ -70,7 +69,6 @@ public class NotesFragmentAdapter extends RecyclerView
 
     @Override
     public void onBindViewHolder(ViewHolder holderT, int position) {
-        pos = position;
         final ViewHolder holder = holderT;
         Notes note = mDataset.get(position);
         holder.title.setText(note.getTitle());

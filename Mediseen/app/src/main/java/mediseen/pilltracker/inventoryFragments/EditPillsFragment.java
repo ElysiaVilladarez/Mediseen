@@ -15,6 +15,7 @@ import android.widget.EditText;
 
 import java.util.Calendar;
 
+import mediseen.DialogSize;
 import mediseen.FragmentReplace;
 import mediseen.customtextview.ButtonPlus;
 import mediseen.customtextview.TextViewPlus;
@@ -30,7 +31,6 @@ import mediseen.work.pearlsantos.mediseen.R;
 public class EditPillsFragment extends Fragment {
     private final static String POSITION = "POSITION";
     private EditText pillName, dosage, amountInInventory;
-    private Pill p;
 
     public static EditPillsFragment newInstance(int pos) {
         EditPillsFragment f = new EditPillsFragment();
@@ -59,7 +59,7 @@ public class EditPillsFragment extends Fragment {
         ((ButtonPlus) rootView.findViewById(R.id.saveButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                p = new Pill();
+                Pill p = new Pill();
                 p.setName(pillName.getText().toString().trim());
                 p.setDosage(dosage.getText().toString().trim());
                 p.setAmountInInventory(Integer.parseInt(amountInInventory.getText().toString().trim()));
@@ -125,14 +125,8 @@ public class EditPillsFragment extends Fragment {
 
                 dialog.show();
 
-                DisplayMetrics displaymetrics = new DisplayMetrics();
-                EditPillsFragment.this.getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-                int height = displaymetrics.heightPixels;
-                int width = displaymetrics.widthPixels;
 
-                Window d = dialog.getWindow();
-                d.setLayout(height / 2, width);
-
+                DialogSize.setSize(EditPillsFragment.this.getActivity(), dialog);
             }
         });
         return rootView;

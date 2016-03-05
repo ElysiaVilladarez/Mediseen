@@ -34,14 +34,14 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:text="CHECK-Up"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <mediseen.customtextview.TextViewPlus
             style="@style/signikaLight"
             android:text="Monday, February 30, 2016"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/headerTextSize2"
+            android:textSize="13sp"
             android:paddingBottom="@dimen/smalMargin"
             android:id="@+id/date" />
 

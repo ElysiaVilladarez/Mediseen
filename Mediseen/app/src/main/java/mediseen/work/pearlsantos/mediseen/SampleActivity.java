@@ -9,7 +9,7 @@ package mediseen.work.pearlsantos.mediseen;
     import android.view.Menu;
     import android.view.View;
 
-    import view.viewgroup.FlyOutContainer;
+  //  import view.viewgroup.FlyOutContainer;
 
     public class SampleActivity extends Activity {
 

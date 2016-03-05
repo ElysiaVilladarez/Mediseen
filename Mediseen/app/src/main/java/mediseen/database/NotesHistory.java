@@ -1,28 +1,17 @@
 package mediseen.database;
 
-
 import java.util.Date;
 
-import io.realm.RealmList;
 import io.realm.RealmObject;
 
 /**
- * Created by elysi on 2/20/2016.
+ * Created by elysi on 3/5/2016.
  */
-public class Notes extends RealmObject {
+public class NotesHistory extends RealmObject{
     private String title;
     private String text;
     private Date updatedDate;
     private int version;
-    private RealmList<NotesHistory> editHistories = new RealmList();
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
 
     public String getTitle() {
         return title;
@@ -48,11 +37,11 @@ public class Notes extends RealmObject {
         this.updatedDate = updatedDate;
     }
 
-    public RealmList<NotesHistory> getEditHistories() {
-        return editHistories;
+    public int getVersion() {
+        return version;
     }
 
-    public void setEditHistories(RealmList<NotesHistory> editHistories) {
-        this.editHistories = editHistories;
+    public void setVersion(int version) {
+        this.version = version;
     }
 }

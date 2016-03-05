@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import io.realm.RealmList;
 import mediseen.customtextview.TextViewPlus;
@@ -60,8 +62,14 @@ public class PillEditHistoryAdapter extends RecyclerView
         pos = position;
         final ViewHolder holder = holderT;
         PillHistory pill = mDataset.get(position);
+
+        SimpleDateFormat f = new SimpleDateFormat("h:mm a");
+        DateFormatSymbols symbols = new DateFormatSymbols(Locale.getDefault());
+        symbols.setAmPmStrings(new String[]{"a.m.", "p.m."});
+        f.setDateFormatSymbols(symbols);
+
         holder.date.setText(new SimpleDateFormat("dd MMMM yyyy").format(pill.getCreatedDate()));
-        holder.time.setText(new SimpleDateFormat("h:mm a").format(pill.getCreatedDate()));
+        holder.time.setText(f.format(pill.getCreatedDate()));
         holder.amountInInventory.setText(Integer.toString(pill.getAmountInInventory()));
 
     }

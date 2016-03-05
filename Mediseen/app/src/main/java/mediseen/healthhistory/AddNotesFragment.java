@@ -34,6 +34,7 @@ public class AddNotesFragment extends Fragment {
                 Notes n = HealthHistory.realm.createObject(Notes.class);
                 n.setTitle(((EditText) rootView.findViewById(R.id.title)).getText().toString().trim());
                 n.setText(((EditText) rootView.findViewById(R.id.text)).getText().toString().trim());
+                n.setVersion(1);
                // SimpleDateFormat f = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
                 Calendar c = Calendar.getInstance();
                 n.setUpdatedDate(c.getTime());
