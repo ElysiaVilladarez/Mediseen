@@ -7,6 +7,7 @@
     <!--Background Colors-->
     <color name="backgroundGreen">#0BB794</color>
     <color name="backgroundGray">#F4F4F4</color>
+    <color name="backgroundBlue">#144377</color>
 
     <color name="buttonWhenPressed">#53CCB2</color>
 

@@ -1,7 +1,8 @@
-<view.viewgroup.FlyOutContainer xmlns:android="http://schemas.android.com/apk/res/android"
+<mediseen.viewgroup.FlyOutContainer xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <!--menu-->
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -15,7 +16,7 @@
             android:onClick="toggleMenu"
             android:text="Button 1" />
 
-        <Button
+        <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="toggleMenu"
@@ -39,13 +40,31 @@
 
     </LinearLayout>
 
+
+    <!--main frame-->
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#888888"
-        android:orientation="vertical"
-        android:gravity="center" >
+        android:orientation="vertical" >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/backgroundGreen">
+
+            <mediseen.customtextview.TextViewPlus
+                android:id="@+id/appTitle"
+                style="@style/signikaNegativeBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="mediseen"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/titleTextSize" />
+        </android.support.v7.widget.Toolbar>
 
         <TextView
             android:layout_width="match_parent"
@@ -59,4 +78,4 @@
             android:text="Toggle Menu" />
     </LinearLayout>
 
-</view.viewgroup.FlyOutContainer>
+</mediseen.viewgroup.FlyOutContainer>

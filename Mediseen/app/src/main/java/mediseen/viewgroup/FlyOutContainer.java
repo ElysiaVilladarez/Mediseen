@@ -1,15 +1,17 @@
-package view.viewgroup;
+package mediseen.viewgroup;
 
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.LinearLayout;
 import android.widget.Scroller;
 import android.os.Handler;
+import android.widget.Toolbar;
+
+import mediseen.work.pearlsantos.mediseen.R;
 
 public class FlyOutContainer extends LinearLayout {
 
@@ -30,6 +32,7 @@ public class FlyOutContainer extends LinearLayout {
 
     //Animation Objects
 
+    //actionBarToolBar.setNavigationIcon();
     protected Scroller menuAnimationScroller = new Scroller(this.getContext(), new LinearInterpolator()); //keeps track of the position of the UI while it's being animated
     //Interpolator: determined speed
     protected Runnable menuAnimationRunnable = new AnimationRunnable(); //dispatch the updating of the UI while it's being animated (?)
