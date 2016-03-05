@@ -7,36 +7,29 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#444488"
         android:orientation="vertical" >
 
-        <Button
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/menuToolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="toggleMenu"
-            android:text="Button 1" />
+            android:layout_height="56dp"
+            android:background="@color/backgroundBlue">
+
+            <mediseen.customtextview.TextViewPlus
+                android:id="@+id/menuTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mediseen"
+                android:layout_marginLeft="@dimen/smalMargin"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/titleTextSize" />
+        </android.support.v7.widget.Toolbar>
 
         <ListView
+            android:id="@+id/menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="toggleMenu"
-            android:text="Home" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="toggleMenu"
-            android:text="Pill Tracker" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="toggleMenu"
-            android:text="Health History" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="toggleMenu"
-            android:text="Login" />
+            android:gravity="center"/>
 
     </LinearLayout>
 
@@ -46,7 +39,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#888888"
+        android:background="#FFFFFF"
         android:orientation="vertical" >
 
         <android.support.v7.widget.Toolbar
@@ -55,13 +48,21 @@
             android:layout_height="56dp"
             android:background="@color/backgroundGreen">
 
+            <ImageButton
+                android:id="@+id/menuButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:onClick="toggleMenu"
+                android:background="@android:color/transparent"
+                android:src="@mipmap/ic_menu_black_24dp"/>
+
             <mediseen.customtextview.TextViewPlus
                 android:id="@+id/appTitle"
-                style="@style/signikaNegativeBold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="mediseen"
+                android:text="Mediseen"
+                android:layout_marginLeft="@dimen/iconPadding"
                 android:textColor="#FFFFFF"
                 android:textSize="@dimen/titleTextSize" />
         </android.support.v7.widget.Toolbar>

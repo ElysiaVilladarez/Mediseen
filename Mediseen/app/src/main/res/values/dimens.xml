@@ -16,11 +16,25 @@
 
     <dimen name="circleLogoSize">20dp</dimen>
     <dimen name="headerTextSize1">19sp</dimen>
-
     <dimen name="headerTextSize2">15sp</dimen>
     <dimen name="bigHeader">25sp</dimen>
-	<dimen name="titleTextSize">17sp</dimen>
+	<dimen name="titleTextSize">18sp</dimen>
     <dimen name="smalMargin">15dp</dimen>
+    <dimen name="iconPadding">20dp</dimen>
+    <dimen name="listviewPadding">20dp</dimen>
+
+
+    <!--android material design typography-->
+    <dimen name="display2">45sp</dimen>
+    <dimen name="display1">34sp</dimen>
+    <dimen name="headline">24sp</dimen>
+    <dimen name="subheading2">16sp</dimen>
+    <dimen name="subheading1">15sp</dimen>
+    <dimen name="body2">14sp</dimen>
+    <dimen name="body1">13sp</dimen>
+
+
+
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
