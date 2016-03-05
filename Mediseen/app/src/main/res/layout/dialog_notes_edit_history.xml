@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundGray">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:background="@color/backgroundGreen">
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProBlack"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/headerTextSize1"
+            android:text="EDIT HISTORY"
+            android:textColor="@android:color/white"/>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/largeMargin"
+        android:paddingRight="@dimen/largeMargin"
+        android:orientation="vertical">
+
+        <mediseen.customtextview.TextViewPlus
+            android:id="@+id/title"
+            style="@style/signikaRegular"
+            android:paddingTop="@dimen/smalMargin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="CHECK-Up"
+            android:textSize="20dp" />
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/signikaLight"
+            android:text="Monday, February 30, 2016"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/headerTextSize2"
+            android:paddingBottom="@dimen/smalMargin"
+            android:id="@+id/date" />
+
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:scrollbars="vertical"
+            android:layout_weight="1">
+
+            <mediseen.customtextview.TextViewPlus
+                android:id="@+id/text"
+                android:textSize="@dimen/headerTextSize2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/lorem_ipsum" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <mediseen.customtextview.ButtonPlus
+            android:id="@+id/cancelButton"
+            style="@style/shortButtonStyle"
+            android:layout_marginRight="@dimen/smallButtonsDistance"
+            android:text="@string/cancel" />
+
+        <mediseen.customtextview.ButtonPlus
+            android:id="@+id/saveButton"
+            style="@style/shortButtonStyle"
+            android:layout_marginLeft="@dimen/smallButtonsDistance"
+            android:text="@string/save" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

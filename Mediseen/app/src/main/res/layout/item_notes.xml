@@ -19,6 +19,7 @@
 
         <mediseen.customtextview.TextViewPlus
             style="@style/sourceSansProBlack"
+            android:id="@+id/title"
             android:textSize="@dimen/headerTextSize1"
             android:text="CHECK UP"
             android:layout_width="match_parent"
@@ -29,6 +30,7 @@
             android:paddingBottom="3dp"/>
         <mediseen.customtextview.TextViewPlus
             android:text="Monday, February 30, 2016"
+            android:id="@+id/date"
             android:paddingLeft="@dimen/smalMargin"
             android:paddingRight="@dimen/smalMargin"
             android:paddingBottom="@dimen/smalMargin"

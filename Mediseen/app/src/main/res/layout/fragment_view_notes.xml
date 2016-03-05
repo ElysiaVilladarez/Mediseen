@@ -54,7 +54,8 @@
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/smalMargin"
         android:paddingRight="@dimen/smalMargin"
-        android:paddingBottom="@dimen/smalMargin"/>
+        android:paddingBottom="@dimen/smalMargin"
+        android:id="@+id/date" />
 
 
     <ScrollView
@@ -96,11 +97,11 @@
         android:orientation="horizontal">
 
         <mediseen.customtextview.ButtonPlus
-            android:id="@+id/cancelButton"
+            android:id="@+id/backButton"
             style="@style/shortButtonStyle"
             android:layout_marginBottom="@dimen/smalMargin"
             android:layout_marginRight="@dimen/smallButtonsDistance"
-            android:text="@string/cancel" />
+            android:text="BACK" />
 
         <mediseen.customtextview.ButtonPlus
             android:id="@+id/saveButton"

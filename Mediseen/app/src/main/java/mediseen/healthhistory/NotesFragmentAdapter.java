@@ -9,10 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import io.realm.Realm;
+import io.realm.RealmResults;
+import mediseen.FragmentReplace;
 import mediseen.customtextview.ButtonPlus;
 import mediseen.customtextview.TextViewPlus;
+import mediseen.database.Notes;
 import mediseen.pilltracker.inventoryFragments.EditPillsFragment;
 import mediseen.work.pearlsantos.mediseen.R;
 
@@ -22,16 +27,19 @@ import mediseen.work.pearlsantos.mediseen.R;
 public class NotesFragmentAdapter extends RecyclerView
         .Adapter<NotesFragmentAdapter
         .ViewHolder> {
-    private ArrayList<String> mDataset;
+    private RealmResults<Notes> mDataset;
     private Context context;
     private Fragment frag;
+    private int pos;
 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        public TextViewPlus title, date;
         public ViewHolder(View itemView) {
             super(itemView);
             itemView.getBackground().clearColorFilter();
-
+            title = (TextViewPlus) itemView.findViewById(R.id.title);
+            date = (TextViewPlus) itemView.findViewById(R.id.date);
             itemView.setOnClickListener(this);
         }
 
@@ -39,25 +47,12 @@ public class NotesFragmentAdapter extends RecyclerView
         public void onClick(View v) {
             v.getBackground().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
             v.invalidate();
-            FragmentTransaction trans = frag.getFragmentManager()
-                    .beginTransaction();
-				/*
-				 * IMPORTANT: We use the "root frame" defined in
-				 * "root_fragment.xml" as the reference to replace fragment
-				 */
-            trans.replace(R.id.root_frame, new ViewNoteFragment());
-
-				/*
-				 * IMPORTANT: The following lines allow us to add the fragment
-				 * to the stack and return to it later, by pressing back
-				 */
-            trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-            trans.commit();
+            FragmentReplace.replaceFragment(frag, R.id.root_frame, ViewNoteFragment.newInstance(pos));
 
         }
     }
 
-    public NotesFragmentAdapter(Context context, ArrayList<String> myDataset, Fragment frag) {
+    public NotesFragmentAdapter(Context context, RealmResults<Notes> myDataset, Fragment frag) {
         this.context = context;
         mDataset = myDataset;
         this.frag = frag;
@@ -75,7 +70,13 @@ public class NotesFragmentAdapter extends RecyclerView
 
     @Override
     public void onBindViewHolder(ViewHolder holderT, int position) {
+        pos = position;
         final ViewHolder holder = holderT;
+        Notes note = mDataset.get(position);
+        holder.title.setText(note.getTitle());
+        SimpleDateFormat f = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+
+        holder.date.setText(f.format(note.getUpdatedDate()));
 
     }
     @Override

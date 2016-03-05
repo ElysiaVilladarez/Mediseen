@@ -19,13 +19,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="toggleMenu"
-            android:text="Button 2" />
+            android:text="Home" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="toggleMenu"
-            android:text="Button 3" />
+            android:text="Pill Tracker" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="toggleMenu"
+            android:text="Health History" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="toggleMenu"
+            android:text="Login" />
+
     </LinearLayout>
 
     <LinearLayout

@@ -1,6 +1,8 @@
 package mediseen.database;
 
 
+import java.util.Date;
+
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
@@ -10,9 +12,8 @@ import io.realm.RealmObject;
 public class Notes extends RealmObject {
     private String title;
     private String text;
-    private String updatedDayOfWeek;
-    private String updatedDate;
-    private RealmList<Notes> editHistories;
+    private Date updatedDate;
+    private RealmList<Notes> editHistories = new RealmList<>();
 
     public String getTitle() {
         return title;
@@ -30,19 +31,11 @@ public class Notes extends RealmObject {
         this.text = text;
     }
 
-    public String getUpdatedDayOfWeek() {
-        return updatedDayOfWeek;
-    }
-
-    public void setUpdatedDayOfWeek(String updatedDayOfWeek) {
-        this.updatedDayOfWeek = updatedDayOfWeek;
-    }
-
-    public String getUpdatedDate() {
+    public Date getUpdatedDate() {
         return updatedDate;
     }
 
-    public void setUpdatedDate(String updatedDate) {
+    public void setUpdatedDate(Date updatedDate) {
         this.updatedDate = updatedDate;
     }
 

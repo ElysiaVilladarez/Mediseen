@@ -1,5 +1,7 @@
 package mediseen.database;
 
+import java.util.Date;
+
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
@@ -12,15 +14,24 @@ public class Pill extends RealmObject {
     private String dosage;
     private int amountInInventory;
     private int amountTillShopping;
-   // private RealmList<Pill> editHistories;
+    private Date updatedDate;
+    private RealmList<PillHistory> editHistories = new RealmList();
 
-//    public RealmList<Pill> getEditHistories() {
-//        return editHistories;
-//    }
-//
-//    public void setEditHistories(RealmList<Pill> editHistories) {
-//        this.editHistories = editHistories;
-//    }
+    public Date getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(Date updatedDate) {
+        this.updatedDate = updatedDate;
+    }
+
+    public RealmList<PillHistory> getEditHistories() {
+        return editHistories;
+    }
+
+    public void setEditHistories(RealmList<PillHistory> editHistories) {
+        this.editHistories = editHistories;
+    }
 
     public String getName() {
         return name;

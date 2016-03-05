@@ -1,0 +1,33 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="mediseen.home.Greeting">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <ImageView
+            android:layout_width="@dimen/logoMarkWidth"
+            android:layout_height="@dimen/logoMarkHeight"
+            android:id="@+id/logo"
+            android:layout_gravity="center"/>
+        <mediseen.customtextview.TextViewPlus
+            style="@style/bigTextStyle"
+            android:text="Hi, I'm Ate Alma,\nyour senior citizen\nhealth buddy"
+            android:layout_width="@dimen/textFieldWidth"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingBottom="@dimen/largeMargin"/>
+        <mediseen.customtextview.TextViewPlus
+            style="@style/signikaNegativeLight"
+            android:textSize="@dimen/headerTextSize1"
+            android:text="@string/fisherman"
+            android:layout_width="@dimen/textFieldWidth"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingBottom="@dimen/smalMargin"/>
+
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,4 +1,4 @@
-package mediseen.pilltracker;
+package mediseen;
 
 import android.view.View;
 import android.view.ViewGroup;

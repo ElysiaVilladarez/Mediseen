@@ -19,5 +19,15 @@
     <!--fragment_shopping_list.xml strings-->
     <string name="noShoppingList">Sorry, there are\ncurrently no items\nin the shopping list</string>
 
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="fisherman">Fisherman\'s boy with a bucket of water goes running each day on the shore,
+    looking for tide pools and crannies for fish that were stranded. Sure-handed, he gathered them all, throwing them
+    back to the ocean, back to the living once more.</string>
+    <string name="title_activity_test_layout">TestLayout</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 </resources>

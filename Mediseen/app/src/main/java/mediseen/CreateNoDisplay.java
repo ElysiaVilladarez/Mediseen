@@ -21,7 +21,7 @@ import mediseen.work.pearlsantos.mediseen.R;
  * Created by elysi on 2/23/2016.
  */
 public class CreateNoDisplay {
-    public static void noDisplay(String alert, ViewGroup wholeLayout, Fragment fragment){
+    public static ViewGroup noDisplay(String alert, ViewGroup wholeLayout, Fragment fragment){
         final Fragment frag = fragment;
         final FrameLayout noPillsLayout = new FrameLayout(frag.getActivity());
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
@@ -53,5 +53,7 @@ public class CreateNoDisplay {
         noPillsLayout.addView(noPillsText);
 
         wholeLayout.addView(noPillsLayout);
+        noPillsLayout.setVisibility(View.GONE);
+        return noPillsLayout;
     }
 }

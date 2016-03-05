@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/backgroundGray"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/smalMargin"
+    android:paddingBottom="@dimen/smalMargin">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/smalMargin"
+        android:orientation="vertical">
+
+        <mediseen.customtextview.TextViewPlus
+            android:id="@+id/date"
+            style="@style/sourceSansProBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="29 February, 2016"
+            android:textSize="@dimen/headerTextSize2" />
+
+        <mediseen.customtextview.TextViewPlus
+            android:id="@+id/time"
+            style="@style/signikaLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10:34PM"
+            android:textSize="@dimen/headerTextSize2" />
+    </LinearLayout>
+
+
+    <mediseen.customtextview.TextViewPlus
+        android:id="@+id/amountInInventory"
+        style="@style/signikaNegativeRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/smalMargin"
+        android:layout_gravity="center"
+        android:textColor="@color/headerColor"
+        android:text="20"
+        android:textSize="45sp" />
+
+</LinearLayout>
