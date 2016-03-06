@@ -20,7 +20,7 @@
     <dimen name="bigHeader">25sp</dimen>
 	<dimen name="titleTextSize">18sp</dimen>
     <dimen name="smalMargin">15dp</dimen>
-    <dimen name="iconPadding">20dp</dimen>
+    <dimen name="iconPadding">40dp</dimen>
     <dimen name="listviewPadding">20dp</dimen>
 
 
