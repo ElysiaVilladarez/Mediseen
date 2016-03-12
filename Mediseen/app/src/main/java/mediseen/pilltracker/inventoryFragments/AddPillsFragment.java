@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import java.util.Calendar;
 
+import io.realm.Realm;
 import mediseen.FragmentReplace;
 import mediseen.customtextview.ButtonPlus;
 import mediseen.database.Pill;
@@ -27,18 +28,15 @@ public class AddPillsFragment extends Fragment {
         ((Button) rootView.findViewById(R.id.test)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Pill pill = new Pill();
-                pill.setName("MEDICINE 2");
-                pill.setDosage("2 pills per day");
-                pill.setAmountInInventory(15);
-                pill.setUpdatedDate(Calendar.getInstance().getTime());
-                pill.setAmountTillShopping(30);
-
-                PillTracker.realm.beginTransaction();
-                PillTracker.realm.copyToRealm(pill);
-                PillTracker.realm.commitTransaction();
-
-
+                Realm realm = Realm.getInstance(getActivity().getApplicationContext());
+                realm.beginTransaction();
+                Pill pill1 = realm.createObject(Pill.class);
+                pill1.setName("MEDICINE 2");
+                pill1.setDosage("2 pills per day");
+                pill1.setAmountTillShopping(3);
+                pill1.setAmountInInventory(20);
+                pill1.setUpdatedDate(Calendar.getInstance().getTime());
+                realm.commitTransaction();
                 FragmentReplace.replaceFragment(AddPillsFragment.this, R.id.root_frame, new InventoryFragment());
             }
         });

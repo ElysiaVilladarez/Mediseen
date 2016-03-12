@@ -16,8 +16,8 @@ public class RootFragmentShopping extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_root, container, false);
-        FragmentReplace.replaceFragment(this, R.id.root_frame, new ShoppingListFragment());
+        View view = inflater.inflate(R.layout.fragment_root_shop, container, false);
+        FragmentReplace.replaceFragment(this, R.id.root_frame_shop, new ShoppingListFragment());
         return view;
     }
 

@@ -7,8 +7,6 @@ import io.realm.RealmObject;
  */
 public class ShoppingList extends RealmObject {
     private Pill pillToBuy;
-    private boolean bought;
-    private int howManyBought;
 
     public Pill getPillToBuy() {
         return pillToBuy;
@@ -16,21 +14,5 @@ public class ShoppingList extends RealmObject {
 
     public void setPillToBuy(Pill pillToBuy) {
         this.pillToBuy = pillToBuy;
-    }
-
-    public boolean isBought() {
-        return bought;
-    }
-
-    public void setBought(boolean bought) {
-        this.bought = bought;
-    }
-
-    public int getHowManyBought() {
-        return howManyBought;
-    }
-
-    public void setHowManyBought(int howManyBought) {
-        this.howManyBought = howManyBought;
     }
 }

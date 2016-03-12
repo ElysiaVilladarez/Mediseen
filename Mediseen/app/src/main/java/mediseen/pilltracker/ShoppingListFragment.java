@@ -13,8 +13,10 @@ import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
+import io.realm.RealmResults;
 import mediseen.CreateNoDisplay;
 import mediseen.database.Pill;
+import mediseen.database.ShoppingList;
 import mediseen.pilltracker.adapters.ShoppingListAdapter;
 import mediseen.pilltracker.inventoryFragments.DividerItemDecoration;
 import mediseen.work.pearlsantos.mediseen.R;
@@ -24,12 +26,12 @@ import mediseen.work.pearlsantos.mediseen.R;
  */
 
 public class ShoppingListFragment extends Fragment {
-    private FrameLayout tempLayout, wholeFrame;
-    private LinearLayout shoppingListLayout;
-    private static ArrayList<Pill> shop;
+    private static FrameLayout tempLayout, wholeFrame;
+    private static LinearLayout shoppingListLayout;
     private static View rootView;
     private static RecyclerView mRecyclerView;
     private static Fragment frag;
+    private static RealmResults<ShoppingList> buy;
     public ShoppingListFragment() {
     }
 
@@ -40,46 +42,49 @@ public class ShoppingListFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_shopping_list, container, false);
         frag = this;
         shoppingListLayout = (LinearLayout) rootView.findViewById(R.id.shoppingListLayout);
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.shoppingList);
+
         setShoppingListAdapter();
-        shop = new ArrayList<>();
-        for(int i=0; i<PillTracker.give.size();i++){
-            System.out.println("CHECK: INSERT IN FOR LOOP SHOPPING LIST FRAG");
-            Pill toShop = PillTracker.give.get(i);
-            System.out.println("CHECK:" + toShop.getAmountInInventory());
-            System.out.println("CHECK:" + toShop.getAmountTillShopping());
-            if(toShop.getAmountInInventory()<=toShop.getAmountTillShopping()){
-                System.out.println("CHECK: INSERT IN FOR LOOP SHOPPING LIST FRAG IF");
-                shop.add(toShop);
-            }
-        }
 
-        if(shop.size()==0){
-            shoppingListLayout.setVisibility(View.GONE);
-            wholeFrame = (FrameLayout)rootView.findViewById(R.id.wholeFrame);
-
-            tempLayout = (FrameLayout)CreateNoDisplay.noDisplay(getResources().getString(R.string.noShoppingList), wholeFrame, this);
-            tempLayout.setVisibility(View.VISIBLE);
-        }
-        else{
-            shoppingListLayout.setVisibility(View.VISIBLE);
-            mRecyclerView = (RecyclerView) rootView.findViewById(R.id.shoppingList);
-            mRecyclerView.setHasFixedSize(true);
-            mRecyclerView.setLayoutManager(new LinearLayoutManager(frag.getActivity()));
-            setRecyclerView();
-
-        }
         return rootView;
     }
 
     public static void setShoppingListAdapter(){
+//        buy = PillTracker.realm.allObjects(ShoppingList.class);
+//        PillTracker.realm.beginTransaction();
+//        buy.clear();
+//        PillTracker.realm.commitTransaction();
+        ArrayList<Pill> shop = new ArrayList<>();
+        for(Pill p: PillTracker.give) {
+            if (p.getAmountInInventory() <= p.getAmountTillShopping()) {
+//                PillTracker.realm.beginTransaction();
+//                ShoppingList buy = PillTracker.realm.createObject(ShoppingList.class);
+//                buy.setPillToBuy(p);
+//                PillTracker.realm.commitTransaction();
+                shop.add(p);
+            }
+        }
+//        buy = PillTracker.realm.allObjects(ShoppingList.class);
+        if(shop.size()==0){
+            shoppingListLayout.setVisibility(View.GONE);
+            wholeFrame = (FrameLayout)rootView.findViewById(R.id.wholeFrame);
 
-    }
-
-    public static void setRecyclerView(){
-        ShoppingListAdapter adapter = new ShoppingListAdapter(frag.getActivity(), shop, frag);
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(adapter);
-        mRecyclerView.getAdapter().notifyDataSetChanged();
+            tempLayout = (FrameLayout)CreateNoDisplay.noDisplay(frag.getResources().getString(R.string.noShoppingList), wholeFrame, frag);
+            tempLayout.setVisibility(View.VISIBLE);
+        }
+        else{
+            shoppingListLayout.setVisibility(View.VISIBLE);
+            if(tempLayout!=null) {
+                tempLayout.setVisibility(View.GONE);
+            }
+            mRecyclerView.setHasFixedSize(true);
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(frag.getActivity()));
+            ShoppingListAdapter adapter = new ShoppingListAdapter(frag.getActivity(), shop, frag);
+            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+            mRecyclerView.setAdapter(adapter);
+            mRecyclerView.getAdapter().notifyDataSetChanged();
+        }
+        System.out.println("CHECK: INVOKED");
 
     }
 }

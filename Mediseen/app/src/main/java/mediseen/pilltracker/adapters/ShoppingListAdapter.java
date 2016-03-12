@@ -3,6 +3,7 @@ package mediseen.pilltracker.adapters;
 import android.app.Dialog;
 import android.content.Context;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -17,11 +18,14 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import io.realm.RealmResults;
 import mediseen.DialogSize;
 import mediseen.customtextview.ButtonPlus;
 import mediseen.customtextview.TextViewPlus;
 import mediseen.database.Pill;
+import mediseen.database.ShoppingList;
 import mediseen.pilltracker.PillTracker;
+import mediseen.pilltracker.ShoppingListFragment;
 import mediseen.pilltracker.inventoryFragments.InventoryFragment;
 import mediseen.work.pearlsantos.mediseen.R;
 
@@ -92,11 +96,17 @@ public class ShoppingListAdapter extends RecyclerView
                         PillTracker.realm.beginTransaction();
                         pill.setAmountInInventory(pill.getAmountInInventory() +
                                 Integer.parseInt(pillsBought.getText().toString().trim()));
+//                        mDataset.get(position).removeFromRealm();
                         PillTracker.realm.commitTransaction();
+
                         mDataset.remove(position);
                         notifyDataSetChanged();
 
                         InventoryFragment.setInventoryAdapter();
+
+                        FragmentTransaction transaction = frag.getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.root_frame_shop, new ShoppingListFragment());
+                        transaction.commit();
 
                         dialog.dismiss();
                     }

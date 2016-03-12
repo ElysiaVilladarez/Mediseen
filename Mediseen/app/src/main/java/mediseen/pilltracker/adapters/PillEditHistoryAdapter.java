@@ -67,8 +67,7 @@ public class PillEditHistoryAdapter extends RecyclerView
         DateFormatSymbols symbols = new DateFormatSymbols(Locale.getDefault());
         symbols.setAmPmStrings(new String[]{"a.m.", "p.m."});
         f.setDateFormatSymbols(symbols);
-
-        holder.date.setText(new SimpleDateFormat("dd MMMM yyyy").format(pill.getCreatedDate()));
+         holder.date.setText(new SimpleDateFormat("dd MMMM yyyy").format(pill.getCreatedDate()));
         holder.time.setText(f.format(pill.getCreatedDate()));
         holder.amountInInventory.setText(Integer.toString(pill.getAmountInInventory()));
 

@@ -120,7 +120,7 @@ public class PillTracker extends Fragment {
                     return new RootFragment();
                 case 1:
                     System.out.println("lol2");
-                    return new ShoppingListFragment();
+                    return new RootFragmentShopping();
             }
             return null;
 

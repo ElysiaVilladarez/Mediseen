@@ -21,6 +21,7 @@ import mediseen.customtextview.ButtonPlus;
 import mediseen.customtextview.TextViewPlus;
 import mediseen.database.Pill;
 import mediseen.database.PillHistory;
+import mediseen.database.ShoppingList;
 import mediseen.pilltracker.PillTracker;
 import mediseen.pilltracker.ShoppingListFragment;
 import mediseen.pilltracker.adapters.PillEditHistoryAdapter;
@@ -60,26 +61,24 @@ public class EditPillsFragment extends Fragment {
         ((ButtonPlus) rootView.findViewById(R.id.saveButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Pill p = new Pill();
+                PillHistory histo = new PillHistory();
+                histo.setCreatedDate(pill.getUpdatedDate());
+                histo.setAmountInInventory(pill.getAmountInInventory());
+                Pill p = null;
+                PillTracker.realm.beginTransaction();
+                p = PillTracker.realm.createObject(Pill.class);
                 p.setName(pillName.getText().toString().trim());
                 p.setDosage(dosage.getText().toString().trim());
                 p.setAmountInInventory(Integer.parseInt(amountInInventory.getText().toString().trim()));
                 p.setUpdatedDate(Calendar.getInstance().getTime());
-
-                PillHistory histo = new PillHistory();
-                histo.setCreatedDate(pill.getUpdatedDate());
-                histo.setAmountInInventory(pill.getAmountInInventory());
-
-                PillTracker.realm.beginTransaction();
                 p.setEditHistories(pill.getEditHistories());
+                p.setAmountTillShopping(pill.getAmountTillShopping());
                 p.getEditHistories().add(histo);
-                PillTracker.realm.copyToRealm(p);
                 pill.removeFromRealm();
                 PillTracker.realm.commitTransaction();
 
                 FragmentReplace.replaceFragment(EditPillsFragment.this, R.id.root_frame, new InventoryFragment());
                 ShoppingListFragment.setShoppingListAdapter();
-                ShoppingListFragment.setRecyclerView();
             }
         });
 
@@ -100,8 +99,8 @@ public class EditPillsFragment extends Fragment {
 
                 dialog.setContentView(R.layout.dialog_pill_edit_history);
 
-                ((TextViewPlus)dialog.findViewById(R.id.pillName)).setText(pill.getName());
-                ((TextViewPlus)dialog.findViewById(R.id.dosage)).setText(pill.getDosage());
+                ((TextViewPlus) dialog.findViewById(R.id.pillName)).setText(pill.getName());
+                ((TextViewPlus) dialog.findViewById(R.id.dosage)).setText(pill.getDosage());
 
                 RecyclerView mRecyclerView = (RecyclerView) dialog.findViewById(R.id.pillHistory);
                 mRecyclerView.setHasFixedSize(true);
@@ -110,7 +109,6 @@ public class EditPillsFragment extends Fragment {
                 mRecyclerView.setItemAnimator(new DefaultItemAnimator());
                 mRecyclerView.setAdapter(adapter);
                 mRecyclerView.getAdapter().notifyDataSetChanged();
-
 
 
                 ((ButtonPlus) dialog.findViewById(R.id.backButton)).setOnClickListener(new View.OnClickListener() {
@@ -129,5 +127,3 @@ public class EditPillsFragment extends Fragment {
         return rootView;
     }
 }
-
-
