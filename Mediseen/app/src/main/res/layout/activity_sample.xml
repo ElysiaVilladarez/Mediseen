@@ -55,7 +55,7 @@
                 android:layout_gravity="left"
                 android:onClick="toggleMenu"
                 android:background="@android:color/transparent"
-                android:src="@mipmap/ic_menu_black_24dp"/>
+                android:src="@mipmap/ic_menu_white_24dp"/>
 
             <mediseen.customtextview.TextViewPlus
                 android:id="@+id/appTitle"
@@ -67,16 +67,10 @@
                 android:textSize="@dimen/titleTextSize" />
         </android.support.v7.widget.Toolbar>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lorem_ipsum" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="toggleMenu"
-            android:text="Toggle Menu" />
+       <FrameLayout
+           android:id="@+id/content_frame"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"></FrameLayout>
     </LinearLayout>
 
 </mediseen.viewgroup.FlyOutContainer>
