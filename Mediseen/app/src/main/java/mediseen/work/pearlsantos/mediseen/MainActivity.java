@@ -7,6 +7,7 @@ package mediseen.work.pearlsantos.mediseen;
     //import android.app.Activity;
     import android.app.SearchManager;
     import android.content.Context;
+    import android.content.Intent;
     import android.graphics.Bitmap;
     import android.graphics.BitmapFactory;
     import android.graphics.Canvas;
@@ -28,6 +29,7 @@ package mediseen.work.pearlsantos.mediseen;
     import android.widget.AdapterView;
     import android.widget.ArrayAdapter;
     import android.widget.ImageButton;
+    import android.widget.ImageView;
     import android.widget.ListView;
     import android.widget.TextView;
     // android.widget.Toolbar;
@@ -51,12 +53,6 @@ package mediseen.work.pearlsantos.mediseen;
             this.root = (FlyOutContainer) this.getLayoutInflater().inflate(R.layout.activity_sample, null);
             Toolbar actionBarToolBar = (Toolbar) root.findViewById(R.id.toolbar);
             setSupportActionBar(actionBarToolBar);
-//            Bitmap bm = BitmapFactory.decodeResource(getResources(),
-//                    R.mipmap.ic_menu_black_24dp);
-//            Bitmap bmInverted = createInvertedBitmap(bm);
-//            Drawable d = new BitmapDrawable(getResources(), bmInverted);
-            //actionBarToolBar.setNavigationIcon(d);
-            //ImageButton menuButton = (ImageButton) root.findViewById(R.id.menuButton);
             title = (TextView) root.findViewById(R.id.appTitle);
 
 
@@ -64,6 +60,10 @@ package mediseen.work.pearlsantos.mediseen;
             ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, R.layout.list_item, menu);
             listMenu.setAdapter(mAdapter);
             listMenu.setOnItemClickListener(new DrawerItemClickListener());
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new Greeting()).commit();
+
+
 
             this.setContentView(root);
 
@@ -74,19 +74,30 @@ package mediseen.work.pearlsantos.mediseen;
         public boolean onCreateOptionsMenu(Menu menu) {
             // Inflate the menu; this adds items to the action bar if it is present.
             getMenuInflater().inflate(R.menu.sample, menu);
-
             MenuItem searchItem = menu.findItem(R.id.action_search);
             SearchManager searchManager = (SearchManager) MainActivity.this.getSystemService(Context.SEARCH_SERVICE);
 
             SearchView searchView = null;
             if(searchItem != null){
                 searchView = (SearchView) searchItem.getActionView();
+//                int searchImgId = this.getResources().getIdentifier("android:id/search_button", null, null);
+//                ImageView v = (ImageView) searchView.findViewById(searchImgId);
+//                v.setImageResource(R.mipmap.ic_search_white_24dp);
             }
             if(searchView != null){
                 searchView.setSearchableInfo(searchManager.getSearchableInfo(MainActivity.this.getComponentName()));
             }
 
+
+            //searchView.setOnQueryTextListener(this);
+
+
             return true;
+        }
+        @Override
+        public boolean onPrepareOptionsMenu(Menu menu){
+            return super.onPrepareOptionsMenu(menu);
+
         }
 
         public void toggleMenu(View v){

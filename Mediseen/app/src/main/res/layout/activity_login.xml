@@ -41,7 +41,8 @@
 
         <mediseen.customtextview.ButtonPlus
             style = "@style/longButtonStyle"
-            android:text="LOG-IN"/>
+            android:text="LOG-IN"
+            android:onClick="login"/>
 
     </LinearLayout>
 </FrameLayout>
