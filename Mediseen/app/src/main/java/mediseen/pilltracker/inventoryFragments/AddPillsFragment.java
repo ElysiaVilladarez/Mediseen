@@ -27,14 +27,17 @@ public class AddPillsFragment extends Fragment {
         ((Button) rootView.findViewById(R.id.test)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Pill pill = new Pill();
+                pill.setName("MEDICINE 2");
+                pill.setDosage("2 pills per day");
+                pill.setAmountInInventory(15);
+                pill.setUpdatedDate(Calendar.getInstance().getTime());
+                pill.setAmountTillShopping(30);
+
                 PillTracker.realm.beginTransaction();
-                Pill pill1 = PillTracker.realm.createObject(Pill.class);
-                pill1.setName("MEDICINE 1");
-                pill1.setDosage("2 pills per day");
-                pill1.setAmountTillShopping(5);
-                pill1.setAmountInInventory(20);
-                pill1.setUpdatedDate(Calendar.getInstance().getTime());
+                PillTracker.realm.copyToRealm(pill);
                 PillTracker.realm.commitTransaction();
+
 
                 FragmentReplace.replaceFragment(AddPillsFragment.this, R.id.root_frame, new InventoryFragment());
             }

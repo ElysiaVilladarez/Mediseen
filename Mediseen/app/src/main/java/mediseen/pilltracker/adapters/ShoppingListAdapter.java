@@ -22,6 +22,7 @@ import mediseen.customtextview.ButtonPlus;
 import mediseen.customtextview.TextViewPlus;
 import mediseen.database.Pill;
 import mediseen.pilltracker.PillTracker;
+import mediseen.pilltracker.inventoryFragments.InventoryFragment;
 import mediseen.work.pearlsantos.mediseen.R;
 
 public class ShoppingListAdapter extends RecyclerView
@@ -94,6 +95,8 @@ public class ShoppingListAdapter extends RecyclerView
                         PillTracker.realm.commitTransaction();
                         mDataset.remove(position);
                         notifyDataSetChanged();
+
+                        InventoryFragment.setInventoryAdapter();
 
                         dialog.dismiss();
                     }

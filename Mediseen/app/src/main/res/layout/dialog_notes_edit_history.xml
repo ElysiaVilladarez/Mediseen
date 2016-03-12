@@ -74,16 +74,10 @@
         android:orientation="horizontal">
 
         <mediseen.customtextview.ButtonPlus
-            android:id="@+id/cancelButton"
-            style="@style/shortButtonStyle"
-            android:layout_marginRight="@dimen/smallButtonsDistance"
-            android:text="@string/cancel" />
-
-        <mediseen.customtextview.ButtonPlus
-            android:id="@+id/saveButton"
+            android:id="@+id/backButton"
             style="@style/shortButtonStyle"
             android:layout_marginLeft="@dimen/smallButtonsDistance"
-            android:text="@string/save" />
+            android:text="BACK" />
 
     </LinearLayout>
 

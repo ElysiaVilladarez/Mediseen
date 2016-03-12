@@ -6,6 +6,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -49,7 +50,25 @@ public class PillTracker extends Fragment {
         mViewPager = (ViewPager) rootView.findViewById(R.id.viewpager);
         tabLayout = (TabLayout) rootView.findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
+//        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//                if(tab.getPosition()==0) {
+//                    mViewPager.setAdapter(mPillTrackerAdapter);
+//                    tabLayout.getTabAt(0).select();
+//                }
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
 
         ViewGroup vg = (ViewGroup) tabLayout.getChildAt(0);
         int tabsCount = vg.getChildCount();
@@ -121,11 +140,6 @@ public class PillTracker extends Fragment {
                     return "SHOPPING LIST";
             }
             return null;
-        }
-        @Override
-        public int getItemPosition(Object object) {
-            // POSITION_NONE makes it possible to reload the PagerAdapter
-            return POSITION_NONE;
         }
     }
 }

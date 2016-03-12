@@ -12,6 +12,9 @@
     <dimen name="buttonHeight">40dp</dimen>
     <dimen name="logoMarkHeight">180dp</dimen>
     <dimen name="logoMarkWidth">180dp</dimen>
+    <dimen name="logoMarkHeightSmall">100dp</dimen>
+    <dimen name="logoMarkWidthSmall">100dp</dimen>
+
 
 
     <dimen name="circleLogoSize">20dp</dimen>

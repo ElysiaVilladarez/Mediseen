@@ -26,7 +26,10 @@ import mediseen.work.pearlsantos.mediseen.R;
 public class ShoppingListFragment extends Fragment {
     private FrameLayout tempLayout, wholeFrame;
     private LinearLayout shoppingListLayout;
-    private ArrayList<Pill> shop;
+    private static ArrayList<Pill> shop;
+    private static View rootView;
+    private static RecyclerView mRecyclerView;
+    private static Fragment frag;
     public ShoppingListFragment() {
     }
 
@@ -34,19 +37,22 @@ public class ShoppingListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_shopping_list, container, false);
+        rootView = inflater.inflate(R.layout.fragment_shopping_list, container, false);
+        frag = this;
         shoppingListLayout = (LinearLayout) rootView.findViewById(R.id.shoppingListLayout);
+        setShoppingListAdapter();
         shop = new ArrayList<>();
         for(int i=0; i<PillTracker.give.size();i++){
             System.out.println("CHECK: INSERT IN FOR LOOP SHOPPING LIST FRAG");
             Pill toShop = PillTracker.give.get(i);
             System.out.println("CHECK:" + toShop.getAmountInInventory());
-            System.out.println("CHECK:" +toShop.getAmountTillShopping());
+            System.out.println("CHECK:" + toShop.getAmountTillShopping());
             if(toShop.getAmountInInventory()<=toShop.getAmountTillShopping()){
                 System.out.println("CHECK: INSERT IN FOR LOOP SHOPPING LIST FRAG IF");
                 shop.add(toShop);
             }
         }
+
         if(shop.size()==0){
             shoppingListLayout.setVisibility(View.GONE);
             wholeFrame = (FrameLayout)rootView.findViewById(R.id.wholeFrame);
@@ -56,16 +62,24 @@ public class ShoppingListFragment extends Fragment {
         }
         else{
             shoppingListLayout.setVisibility(View.VISIBLE);
-
-            RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.shoppingList);
-            mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
+            mRecyclerView = (RecyclerView) rootView.findViewById(R.id.shoppingList);
             mRecyclerView.setHasFixedSize(true);
-            mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-            ShoppingListAdapter adapter = new ShoppingListAdapter(getActivity(), shop, this);
-            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-            mRecyclerView.setAdapter(adapter);
-            mRecyclerView.getAdapter().notifyDataSetChanged();
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(frag.getActivity()));
+            setRecyclerView();
+
         }
         return rootView;
+    }
+
+    public static void setShoppingListAdapter(){
+
+    }
+
+    public static void setRecyclerView(){
+        ShoppingListAdapter adapter = new ShoppingListAdapter(frag.getActivity(), shop, frag);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.getAdapter().notifyDataSetChanged();
+
     }
 }

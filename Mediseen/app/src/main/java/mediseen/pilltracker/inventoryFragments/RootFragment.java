@@ -28,7 +28,11 @@ public class RootFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_root, container, false);
-        FragmentReplace.replaceFragment(this, R.id.root_frame, new InventoryFragment());
+        FragmentTransaction trans = getFragmentManager()
+                .beginTransaction();
+
+        trans.replace(R.id.root_frame, new InventoryFragment());
+        trans.commit();
         return view;
     }
 

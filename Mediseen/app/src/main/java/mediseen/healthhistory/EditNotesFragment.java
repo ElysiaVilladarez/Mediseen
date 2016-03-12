@@ -85,13 +85,7 @@ public class EditNotesFragment extends Fragment {
                 }
 
 
-                ((ButtonPlus) dialog.findViewById(R.id.cancelButton)).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-                ((ButtonPlus) dialog.findViewById(R.id.saveButton)).setOnClickListener(new View.OnClickListener() {
+                ((ButtonPlus) dialog.findViewById(R.id.backButton)).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         dialog.dismiss();

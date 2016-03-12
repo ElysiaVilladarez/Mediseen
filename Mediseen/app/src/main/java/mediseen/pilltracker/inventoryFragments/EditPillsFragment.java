@@ -22,6 +22,7 @@ import mediseen.customtextview.TextViewPlus;
 import mediseen.database.Pill;
 import mediseen.database.PillHistory;
 import mediseen.pilltracker.PillTracker;
+import mediseen.pilltracker.ShoppingListFragment;
 import mediseen.pilltracker.adapters.PillEditHistoryAdapter;
 import mediseen.work.pearlsantos.mediseen.R;
 
@@ -77,6 +78,8 @@ public class EditPillsFragment extends Fragment {
                 PillTracker.realm.commitTransaction();
 
                 FragmentReplace.replaceFragment(EditPillsFragment.this, R.id.root_frame, new InventoryFragment());
+                ShoppingListFragment.setShoppingListAdapter();
+                ShoppingListFragment.setRecyclerView();
             }
         });
 
@@ -110,13 +113,7 @@ public class EditPillsFragment extends Fragment {
 
 
 
-                ((ButtonPlus) dialog.findViewById(R.id.cancelButton)).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-                ((ButtonPlus) dialog.findViewById(R.id.saveButton)).setOnClickListener(new View.OnClickListener() {
+                ((ButtonPlus) dialog.findViewById(R.id.backButton)).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         dialog.dismiss();

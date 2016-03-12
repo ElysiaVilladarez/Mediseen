@@ -17,24 +17,12 @@ public class Pill extends RealmObject {
     private Date updatedDate;
     private RealmList<PillHistory> editHistories = new RealmList();
 
-    public Date getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(Date updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public RealmList<PillHistory> getEditHistories() {
-        return editHistories;
-    }
-
-    public void setEditHistories(RealmList<PillHistory> editHistories) {
-        this.editHistories = editHistories;
-    }
-
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDosage() {
@@ -61,8 +49,19 @@ public class Pill extends RealmObject {
         this.amountTillShopping = amountTillShopping;
     }
 
+    public Date getUpdatedDate() {
+        return updatedDate;
+    }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUpdatedDate(Date updatedDate) {
+        this.updatedDate = updatedDate;
+    }
+
+    public RealmList<PillHistory> getEditHistories() {
+        return editHistories;
+    }
+
+    public void setEditHistories(RealmList<PillHistory> editHistories) {
+        this.editHistories = editHistories;
     }
 }

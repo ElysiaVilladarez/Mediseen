@@ -24,6 +24,8 @@ import mediseen.work.pearlsantos.mediseen.R;
 
 public class InventoryFragment extends Fragment {
     private FrameLayout tempLayout;
+    private static RecyclerView mRecyclerView;
+    private static Fragment frag;
   //  private final String TYPEFACE = "fonts/SignikaNegative-Regular_0.ttf";
 
     @Override
@@ -34,7 +36,7 @@ public class InventoryFragment extends Fragment {
         ButtonPlus addPillsButton = (ButtonPlus) rootView.findViewById(R.id.addPillsButton);
 
 
-
+        frag = this;
         addPillsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,19 +56,23 @@ public class InventoryFragment extends Fragment {
             pillInventoryLayout.setVisibility(View.VISIBLE);
             addPillsButton.setVisibility(View.VISIBLE);
 
-
-            RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.pillInventory);
+            mRecyclerView = (RecyclerView) rootView.findViewById(R.id.pillInventory);
             mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
             mRecyclerView.setHasFixedSize(true);
             mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-            InventoryAdapter adapter = new InventoryAdapter(getActivity(), PillTracker.give, this);
-            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-            mRecyclerView.setAdapter(adapter);
-            mRecyclerView.getAdapter().notifyDataSetChanged();
+            setInventoryAdapter();
 
         }
 
 
         return rootView;
+    }
+
+    public static void setInventoryAdapter(){
+        InventoryAdapter adapter = new InventoryAdapter(frag.getActivity(), PillTracker.give, frag);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.getAdapter().notifyDataSetChanged();
+
     }
 }
