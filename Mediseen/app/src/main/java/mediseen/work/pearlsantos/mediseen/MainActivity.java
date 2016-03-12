@@ -21,7 +21,7 @@ package mediseen.work.pearlsantos.mediseen;
     import android.support.v4.app.Fragment;
     import android.support.v4.app.FragmentManager;
     import android.support.v7.app.*;
-    import android.support.v7.widget.SearchView;
+    import android.widget.SearchView;
     import android.support.v7.widget.Toolbar;
     import android.view.Menu;
     import android.view.MenuItem;
@@ -36,6 +36,7 @@ package mediseen.work.pearlsantos.mediseen;
 
     import mediseen.healthhistory.HealthHistory;
     import mediseen.home.Greeting;
+    import mediseen.login.LoginPage;
     import mediseen.pilltracker.PillTracker;
     import mediseen.viewgroup.FlyOutContainer;
 
@@ -62,7 +63,8 @@ package mediseen.work.pearlsantos.mediseen;
             listMenu.setOnItemClickListener(new DrawerItemClickListener());
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_frame, new Greeting()).commit();
-
+            listMenu.setItemChecked(0, true);
+            title.setText(menu[0]); //setting the title
 
 
             this.setContentView(root);
@@ -77,16 +79,15 @@ package mediseen.work.pearlsantos.mediseen;
             MenuItem searchItem = menu.findItem(R.id.action_search);
             SearchManager searchManager = (SearchManager) MainActivity.this.getSystemService(Context.SEARCH_SERVICE);
 
-            SearchView searchView = null;
-            if(searchItem != null){
-                searchView = (SearchView) searchItem.getActionView();
-//                int searchImgId = this.getResources().getIdentifier("android:id/search_button", null, null);
-//                ImageView v = (ImageView) searchView.findViewById(searchImgId);
-//                v.setImageResource(R.mipmap.ic_search_white_24dp);
-            }
-            if(searchView != null){
-                searchView.setSearchableInfo(searchManager.getSearchableInfo(MainActivity.this.getComponentName()));
-            }
+            SearchView searchView = (SearchView) searchItem.getActionView();
+            int searchImgId = getResources().getIdentifier("android:id/search_button", null, null);
+            ImageView v = (ImageView) searchView.findViewById(searchImgId);
+            v.setImageResource(R.mipmap.ic_search_white_24dp);
+            int searchHintId = getResources().getIdentifier("android:id/search_mag_icon", null, null);
+            ImageView w = (ImageView) searchView.findViewById(searchHintId);
+            w.setImageResource(R.mipmap.ic_search_white_24dp);
+//            .search_mag_icon)
+
 
 
             //searchView.setOnQueryTextListener(this);
@@ -133,14 +134,16 @@ package mediseen.work.pearlsantos.mediseen;
                     fragment = new Greeting(); //account settings
                     break;
                 case 5:
-                    fragment = new Greeting(); //logout
+                    logout(); //logout
                     break;
                 default:
                     break;
             }
+            if(fragment != null){
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+            }
 
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
             // update selected item and title, then close the drawer
             listMenu.setItemChecked(position, true);
@@ -148,7 +151,11 @@ package mediseen.work.pearlsantos.mediseen;
             root.toggleMenu();
         }
 
-
+        public void logout(){
+            Intent i = new Intent(this, LoginPage.class);
+            startActivity(i);
+            finish();
+        }
 
 
     }
