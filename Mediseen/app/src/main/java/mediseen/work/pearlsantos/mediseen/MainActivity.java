@@ -17,24 +17,32 @@ package mediseen.work.pearlsantos.mediseen;
     import android.graphics.drawable.BitmapDrawable;
     import android.graphics.drawable.Drawable;
     import android.os.Bundle;
+    import android.support.v4.app.Fragment;
+    import android.support.v4.app.FragmentManager;
     import android.support.v7.app.*;
     import android.support.v7.widget.SearchView;
     import android.support.v7.widget.Toolbar;
     import android.view.Menu;
     import android.view.MenuItem;
     import android.view.View;
+    import android.widget.AdapterView;
     import android.widget.ArrayAdapter;
     import android.widget.ImageButton;
     import android.widget.ListView;
+    import android.widget.TextView;
     // android.widget.Toolbar;
 
+    import mediseen.healthhistory.HealthHistory;
+    import mediseen.home.Greeting;
+    import mediseen.pilltracker.PillTracker;
     import mediseen.viewgroup.FlyOutContainer;
 
     public class MainActivity extends AppCompatActivity {
 
         FlyOutContainer root;
         final String[] menu = {"Home", "Pill Tracker", "Health History", "General Information", "Account Settings", "Log Out"};
-
+        ListView listMenu;
+        TextView title;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +56,14 @@ package mediseen.work.pearlsantos.mediseen;
 //            Bitmap bmInverted = createInvertedBitmap(bm);
 //            Drawable d = new BitmapDrawable(getResources(), bmInverted);
             //actionBarToolBar.setNavigationIcon(d);
-            ImageButton menuButton = (ImageButton) root.findViewById(R.id.menuButton);
+            //ImageButton menuButton = (ImageButton) root.findViewById(R.id.menuButton);
+            title = (TextView) root.findViewById(R.id.appTitle);
 
 
-            ListView listMenu = (ListView) root.findViewById(R.id.menu);
+            listMenu = (ListView) root.findViewById(R.id.menu);
             ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, R.layout.list_item, menu);
             listMenu.setAdapter(mAdapter);
+            listMenu.setOnItemClickListener(new DrawerItemClickListener());
 
             this.setContentView(root);
 
@@ -83,29 +93,56 @@ package mediseen.work.pearlsantos.mediseen;
             this.root.toggleMenu();
         }
 
-        private Bitmap createInvertedBitmap(Bitmap src) {
-            ColorMatrix colorMatrix_Inverted =
-                    new ColorMatrix(new float[] {
-                            -1,  0,  0,  0, 255,
-                            0, -1,  0,  0, 255,
-                            0,  0, -1,  0, 255,
-                            0,  0,  0,  1,   0});
-
-            ColorFilter ColorFilter_Sepia = new ColorMatrixColorFilter(
-                    colorMatrix_Inverted);
-
-            Bitmap bitmap = Bitmap.createBitmap(src.getWidth(), src.getHeight(),
-                    Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(bitmap);
-
-            Paint paint = new Paint();
-
-            paint.setColorFilter(ColorFilter_Sepia);
-            canvas.drawBitmap(src, 0, 0, paint);
-
-            return bitmap;
+        private class DrawerItemClickListener implements ListView.OnItemClickListener {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selectItem(position);
+            }
         }
 
+        private void selectItem(int position) {
+            // update the main content by replacing fragments
+            Fragment fragment = null;
+            Bundle args = new Bundle();
+
+            switch(position){
+                case 0:
+                    fragment = new Greeting();
+                    break;
+                case 1:
+                    fragment = new PillTracker();
+                    break;
+                case 2:
+                    fragment = new HealthHistory();
+                    break;
+                case 3:
+                    fragment = new Greeting(); //should be general information
+                    break;
+                case 4:
+                    fragment = new Greeting(); //account settings
+                    break;
+                case 5:
+                    fragment = new Greeting(); //logout
+                    break;
+                default:
+                    break;
+            }
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+
+            // update selected item and title, then close the drawer
+            listMenu.setItemChecked(position, true);
+            title.setText(menu[position]); //setting the title
+            root.toggleMenu();
+        }
+
+
+
+
     }
+
+
+
 
 
