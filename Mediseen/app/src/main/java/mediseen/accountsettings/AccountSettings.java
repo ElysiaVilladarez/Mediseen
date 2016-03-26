@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import mediseen.FragmentReplace;
 import mediseen.customtextview.ButtonPlus;
+import mediseen.helpers.FragmentReplace;
 import mediseen.work.pearlsantos.mediseen.R;
 
 

@@ -11,7 +11,6 @@ import android.widget.Scroller;
 import android.os.Handler;
 import android.widget.Toolbar;
 
-import mediseen.work.pearlsantos.mediseen.R;
 
 public class FlyOutContainer extends LinearLayout {
 

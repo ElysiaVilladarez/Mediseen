@@ -22,7 +22,7 @@
             android:paddingTop="@dimen/upperPadding"
             android:textColor="@color/backgroundBlue"
             android:text="ACCOUNT SETTINGS"
-            android:textSize="@dimen/headerTextSize2"
+            android:textSize="@dimen/titleText"
             />
 
         <mediseen.customtextview.ButtonPlus

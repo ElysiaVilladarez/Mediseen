@@ -14,17 +14,14 @@
     <dimen name="logoMarkWidth">180dp</dimen>
     <dimen name="logoMarkHeightSmall">100dp</dimen>
     <dimen name="logoMarkWidthSmall">100dp</dimen>
-<<<<<<< HEAD
 
     <dimen name="headlineText">33sp</dimen>
     <dimen name="titleText">18sp</dimen>
     <dimen name="bodyText">18sp</dimen>
     <dimen name="additionalText">16sp</dimen>
     <dimen name="numbers">50sp</dimen>
-=======
     <dimen name="textFieldMarginSmall">10dp</dimen>
     <dimen name="textViewSize">136dp</dimen>
->>>>>>> 01af2ac899fd8b65186b6116e12e2b1140cd8561
 
 
     <dimen name="circleLogoSize">20dp</dimen>

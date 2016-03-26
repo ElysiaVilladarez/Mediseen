@@ -24,7 +24,7 @@
                 android:paddingTop="@dimen/upperPadding"
                 android:textColor="@color/backgroundBlue"
                 android:text="ACCOUNT SETTINGS"
-                android:textSize="@dimen/headerTextSize1"
+                android:textSize="@dimen/titleText"
                 />
         </LinearLayout>
 
