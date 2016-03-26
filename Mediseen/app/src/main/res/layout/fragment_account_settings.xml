@@ -1,0 +1,246 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center|top"
+    tools:context="mediseen.accountsettings.AccountSettings">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProBlack"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:paddingBottom="20dp"
+            android:paddingTop="@dimen/upperPadding"
+            android:textColor="@color/backgroundBlue"
+            android:text="ACCOUNT SETTINGS"
+            android:textSize="@dimen/headerTextSize2"
+            />
+
+        <mediseen.customtextview.ButtonPlus
+            style="@style/shortButtonStyle"
+            android:text="@string/edit"
+            android:layout_margin="@dimen/smalMargin"
+            android:id="@+id/accountEditButton" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding"
+            android:textColor="@color/backgroundGreen"
+            android:textSize="@dimen/smallText"
+            android:text="USERNAME"
+            />
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding2"
+            android:textSize="@dimen/subheading3"
+            android:text="Juan Dela Cruz"
+            android:id="@+id/username" /></LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding"
+            android:textColor="@color/backgroundGreen"
+            android:textSize="@dimen/smallText"
+            android:text="PASSWORD" />
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding2"
+            android:textSize="@dimen/subheading3"
+            android:text="showtime"
+            android:password="true"
+            android:id="@+id/password" /></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding"
+            android:textColor="@color/backgroundGreen"
+            android:textSize="@dimen/smallText"
+            android:text="MEDICAL CONDITION"/>
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding2"
+            android:textSize="@dimen/subheading3"
+            android:text="Alzheimer's Disease"
+            android:id="@+id/medicalCondition" /></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding"
+            android:textColor="@color/backgroundGreen"
+            android:textSize="@dimen/smallText"
+            android:text="SENIOR CITIZEN"/>
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding2"
+            android:textSize="@dimen/subheading3"
+            android:text="Albert Einstein"
+            android:id="@+id/seniorCitizenName" /></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding"
+            android:textColor="@color/backgroundGreen"
+            android:textSize="@dimen/smallText"
+            android:text="FAMILY DOCTOR" />
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding2"
+            android:textSize="@dimen/subheading3"
+            android:text="Dr. Facundo"
+            android:id="@+id/doctorName" /></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding"
+            android:textColor="@color/backgroundGreen"
+            android:textSize="@dimen/smallText"
+            android:text="EMERGENCY CONTACT NUMBER" />
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/textViewMargin"
+            android:paddingLeft="@dimen/upperPadding"
+            android:paddingRight="@dimen/upperPadding"
+            android:paddingTop="@dimen/lowerPadding2"
+            android:textSize="@dimen/subheading3"
+            android:text="123 45 67"
+            android:id="@+id/contactNum" /></LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
+

@@ -11,6 +11,7 @@ package mediseen.work.pearlsantos.mediseen;
     import android.graphics.Bitmap;
     import android.graphics.BitmapFactory;
     import android.graphics.Canvas;
+    import android.graphics.Color;
     import android.graphics.ColorFilter;
     import android.graphics.ColorMatrix;
     import android.graphics.ColorMatrixColorFilter;
@@ -34,7 +35,9 @@ package mediseen.work.pearlsantos.mediseen;
     import android.widget.TextView;
     // android.widget.Toolbar;
 
+    import mediseen.customtextview.TextViewPlus;
     import mediseen.healthhistory.HealthHistory;
+    import mediseen.accountsettings.AccountSettings;
     import mediseen.home.Greeting;
     import mediseen.login.LoginPage;
     import mediseen.pilltracker.PillTracker;
@@ -60,6 +63,7 @@ package mediseen.work.pearlsantos.mediseen;
             listMenu = (ListView) root.findViewById(R.id.menu);
             ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, R.layout.list_item, menu);
             listMenu.setAdapter(mAdapter);
+            listMenu.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             listMenu.setOnItemClickListener(new DrawerItemClickListener());
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_frame, new Greeting()).commit();
@@ -108,6 +112,8 @@ package mediseen.work.pearlsantos.mediseen;
         private class DrawerItemClickListener implements ListView.OnItemClickListener {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                TextViewPlus text = (TextViewPlus) view.findViewById(R.id.menu_item);
+//                text.setBackgroundColor(Color.parseColor(getResources().getString(R.string.backgroundGray)));
                 selectItem(position);
             }
         }
@@ -115,23 +121,28 @@ package mediseen.work.pearlsantos.mediseen;
         private void selectItem(int position) {
             // update the main content by replacing fragments
             Fragment fragment = null;
-            Bundle args = new Bundle();
+            //Bundle args = new Bundle();
 
             switch(position){
                 case 0:
                     fragment = new Greeting();
+                    root.toggleMenu();
                     break;
                 case 1:
                     fragment = new PillTracker();
+                    root.toggleMenu();
                     break;
                 case 2:
                     fragment = new HealthHistory();
+                    root.toggleMenu();
                     break;
                 case 3:
                     fragment = new Greeting(); //should be general information
+                    root.toggleMenu();
                     break;
                 case 4:
-                    fragment = new Greeting(); //account settings
+                    fragment = new AccountSettings();
+                    root.toggleMenu();
                     break;
                 case 5:
                     logout(); //logout
@@ -148,7 +159,7 @@ package mediseen.work.pearlsantos.mediseen;
             // update selected item and title, then close the drawer
             listMenu.setItemChecked(position, true);
             title.setText(menu[position]); //setting the title
-            root.toggleMenu();
+
         }
 
         public void logout(){

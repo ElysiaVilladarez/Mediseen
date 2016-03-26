@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mediseen.customtextview.TextViewPlus xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/signikaRegular"
+    style="@style/sourceSansProRegular"
+    android:id="@+id/menu_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/state"
+    android:textColor="@drawable/text_state"
     android:textSize="@dimen/subheading2"
     android:padding="@dimen/listviewPadding"
     android:layout_marginLeft="@dimen/listviewPadding"/>

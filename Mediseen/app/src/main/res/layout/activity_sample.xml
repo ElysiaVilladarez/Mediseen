@@ -16,11 +16,12 @@
             android:background="@color/backgroundBlue">
 
             <mediseen.customtextview.TextViewPlus
+                style="@style/signikaBold"
                 android:id="@+id/menuTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Mediseen"
-                android:layout_marginLeft="@dimen/smalMargin"
+                android:layout_marginLeft="25dp"
+                android:text="mediseen"
                 android:textColor="#FFFFFF"
                 android:textSize="@dimen/titleTextSize" />
         </android.support.v7.widget.Toolbar>
@@ -51,7 +52,7 @@
             <ImageButton
                 android:id="@+id/menuButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="left"
                 android:onClick="toggleMenu"
                 android:background="@android:color/transparent"
