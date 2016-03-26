@@ -3,22 +3,17 @@ package mediseen.healthhistory;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
-import io.realm.Realm;
 import io.realm.RealmResults;
-import mediseen.FragmentReplace;
-import mediseen.customtextview.ButtonPlus;
+import mediseen.helpers.FragmentReplace;
 import mediseen.customtextview.TextViewPlus;
 import mediseen.database.Notes;
-import mediseen.pilltracker.inventoryFragments.EditPillsFragment;
 import mediseen.work.pearlsantos.mediseen.R;
 
 /**

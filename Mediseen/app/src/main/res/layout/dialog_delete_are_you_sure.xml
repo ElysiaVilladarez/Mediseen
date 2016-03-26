@@ -11,23 +11,24 @@
         <mediseen.customtextview.TextViewPlus
             style="@style/sourceSansProBlack"
             android:layout_gravity="center"
+            android:id="@+id/deletingTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/titleText"
-            android:text="EDIT HISTORY"
+            android:text="DELETING STUFF"
             android:textColor="@android:color/white"/>
     </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.3"
+        android:layout_weight="0.5"
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/largeMargin"
         android:paddingRight="@dimen/largeMargin"
         android:orientation="vertical">
 
         <mediseen.customtextview.TextViewPlus
-            android:id="@+id/pillName"
+            android:id="@+id/title"
             style="@style/sourceSansProBlack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,35 +36,51 @@
             android:textSize="@dimen/titleText" />
 
         <mediseen.customtextview.TextViewPlus
-            android:id="@+id/dosage"
+            android:id="@+id/additionalInfo"
             style="@style/sourceSansProRegular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1 pill, once a day"
             android:textSize="@dimen/additionalText" />
     </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/pillHistory"
-        android:layout_gravity="center"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:scrollbarStyle="outsideOverlay"/>
+        android:layout_height="wrap_content"
+        android:layout_weight="0.4"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/largeMargin"
+        android:paddingRight="@dimen/largeMargin"
+        android:orientation="vertical">
+
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProRegular"
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Are you sure you want to delete . . . ?"
+            android:textSize="@dimen/bodyText" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.3"
+        android:layout_weight="0.7"
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="horizontal">
 
         <mediseen.customtextview.ButtonPlus
-            android:id="@+id/backButton"
+            android:id="@+id/yesButton"
+            style="@style/shortButtonStyle"
+            android:layout_marginRight="@dimen/smallButtonsDistance"
+            android:text="YES" />
+
+        <mediseen.customtextview.ButtonPlus
+            android:id="@+id/noButton"
             style="@style/shortButtonStyle"
             android:layout_marginLeft="@dimen/smallButtonsDistance"
-            android:text="@string/back" />
+            android:text="NO" />
 
     </LinearLayout>
 

@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="29 February, 2016"
-            android:textSize="@dimen/headerTextSize2" />
+            android:textSize="@dimen/additionalText" />
 
         <mediseen.customtextview.TextViewPlus
             android:id="@+id/time"
@@ -31,19 +31,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="10:34PM"
-            android:textSize="@dimen/headerTextSize2" />
+            android:textSize="@dimen/additionalText" />
     </LinearLayout>
 
 
     <mediseen.customtextview.TextViewPlus
         android:id="@+id/amountInInventory"
-        style="@style/signikaNegativeRegular"
+        style="@style/sourceSansProBlack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingRight="@dimen/smalMargin"
         android:layout_gravity="center"
         android:textColor="@color/headerColor"
         android:text="20"
-        android:textSize="45sp" />
+        android:textSize="@dimen/numbers" />
 
 </LinearLayout>

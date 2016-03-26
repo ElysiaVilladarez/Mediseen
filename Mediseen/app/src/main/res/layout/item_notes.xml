@@ -20,7 +20,8 @@
         <mediseen.customtextview.TextViewPlus
             style="@style/sourceSansProBlack"
             android:id="@+id/title"
-            android:textSize="@dimen/headerTextSize1"
+            android:textColor="@color/headerColor"
+            android:textSize="@dimen/titleText"
             android:text="CHECK UP"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -34,7 +35,8 @@
             android:paddingLeft="@dimen/smalMargin"
             android:paddingRight="@dimen/smalMargin"
             android:paddingBottom="@dimen/smalMargin"
-            style="@style/signikaLight"
+            style="@style/sourceSansProRegular"
+            android:textSize="@dimen/additionalText"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

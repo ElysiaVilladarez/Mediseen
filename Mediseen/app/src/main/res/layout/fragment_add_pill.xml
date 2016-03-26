@@ -1,10 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:id="@+id/addingPillsLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <Button
+    <EditText
+        android:id="@+id/pillName"
+        style="@style/textField"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/textFieldMargin"
+        android:hint="Name of medicine" />
+
+    <!--<EditText-->
+    <!--style="@style/textField"-->
+    <!--android:hint="Dosage"-->
+    <!--android:id="@+id/dosage"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_margin="@dimen/textFieldMargin"-->
+    <!--android:scrollbarStyle="outsideOverlay"/>-->
+
+    <Spinner
+        android:id="@+id/dosage"
+        style="@style/textField"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/textFieldMargin"
+        android:scrollbarStyle="outsideOverlay" />
+
+    <EditText
+        android:id="@+id/amountInInventory"
+        style="@style/textField"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/textFieldMargin"
+        android:hint="Amount currently in inventory"
+        android:inputType="number" />
+
+    <mediseen.customtextview.TextViewPlus
+        style="@style/sourceSansProRegular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save pill"
-        android:id="@+id/test" />
+        android:layout_gravity="start"
+        android:layout_marginLeft="@dimen/textFieldMargin"
+        android:gravity="left"
+        android:text="Add to shopping list when it reaches:"
+        android:textSize="@dimen/additionalText" />
+
+    <EditText
+        android:id="@+id/amountInShopping"
+        style="@style/textField"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/textFieldMargin"
+        android:hint="Amount left in inventory"
+        android:inputType="number" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/smalMargin"
+        android:orientation="horizontal">
+
+        <mediseen.customtextview.ButtonPlus
+            android:id="@+id/cancelButton"
+            style="@style/shortButtonStyle"
+            android:layout_margin="@dimen/smallButtonsDistance"
+            android:text="@string/cancel" />
+
+        <mediseen.customtextview.ButtonPlus
+            android:id="@+id/saveButton"
+            style="@style/shortButtonStyle"
+            android:layout_margin="@dimen/smallButtonsDistance"
+            android:text="@string/save" />
+
+    </LinearLayout>
 </LinearLayout>

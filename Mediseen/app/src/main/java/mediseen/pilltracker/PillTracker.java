@@ -6,7 +6,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -19,6 +18,7 @@ import io.realm.RealmResults;
 import mediseen.customtextview.CustomFontHelper;
 import mediseen.database.Pill;
 import mediseen.pilltracker.inventoryFragments.RootFragment;
+import mediseen.pilltracker.shoppinglist.RootFragmentShopping;
 import mediseen.work.pearlsantos.mediseen.R;
 
 public class PillTracker extends Fragment {

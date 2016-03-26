@@ -1,4 +1,4 @@
-package mediseen;
+package mediseen.helpers;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

@@ -31,7 +31,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
+                android:layout_weight="2"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/smalMargin"
                 android:layout_marginTop="@dimen/smalMargin"
@@ -43,35 +43,54 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="MEDICINE"
-                    android:textSize="@dimen/headerTextSize1" />
+                    android:textSize="@dimen/titleText" />
 
                 <mediseen.customtextview.TextViewPlus
                     android:id="@+id/dosage"
-                    style="@style/signikaLight"
+                    style="@style/sourceSansProRegular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="1 pill, once a day"
-                    android:textSize="@dimen/headerTextSize1" />
+                    android:textSize="@dimen/additionalText" />
             </LinearLayout>
 
 
             <mediseen.customtextview.TextViewPlus
                 android:id="@+id/amountInInventory"
-                style="@style/signikaNegativeRegular"
+                style="@style/sourceSansProBlack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/smalMargin"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:textColor="@color/headerColor"
-                android:text="20"
-                android:textSize="50sp" />
+                android:text="2"
+                android:textSize="@dimen/numbers" />
 
         </LinearLayout>
-        <mediseen.customtextview.ButtonPlus
-            style="@style/shortButtonStyle"
-            android:id="@+id/editButton"
-            android:text="@string/edit"
-            android:layout_gravity="end"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+            <mediseen.customtextview.ButtonPlus
+                style="@style/shortButtonStyle"
+                android:id="@+id/editButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/edit"
+                android:layout_gravity="left"/>
+            <mediseen.customtextview.ButtonPlus
+                style="@style/shortButtonStyle"
+                android:background="@color/headerColor"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/deleteButton"
+                android:text="@string/delete"
+                android:layout_gravity="right"/>
+
+        </LinearLayout>
     </LinearLayout>
 
 

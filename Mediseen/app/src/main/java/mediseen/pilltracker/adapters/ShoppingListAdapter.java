@@ -5,7 +5,6 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,15 +16,16 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
-import io.realm.RealmResults;
-import mediseen.DialogSize;
+import mediseen.database.PillHistory;
+import mediseen.helpers.DialogSize;
 import mediseen.customtextview.ButtonPlus;
 import mediseen.customtextview.TextViewPlus;
 import mediseen.database.Pill;
-import mediseen.database.ShoppingList;
+import mediseen.helpers.FragmentReplace;
 import mediseen.pilltracker.PillTracker;
-import mediseen.pilltracker.ShoppingListFragment;
+import mediseen.pilltracker.shoppinglist.ShoppingListFragment;
 import mediseen.pilltracker.inventoryFragments.InventoryFragment;
 import mediseen.work.pearlsantos.mediseen.R;
 
@@ -93,10 +93,22 @@ public class ShoppingListAdapter extends RecyclerView
                     @Override
                     public void onClick(View v) {
                         EditText pillsBought = (EditText) dialog.findViewById(R.id.pillsBought);
+
+                        PillHistory histo = new PillHistory();
+                        histo.setCreatedDate(pill.getUpdatedDate());
+                        histo.setAmountInInventory(pill.getAmountInInventory());
+
                         PillTracker.realm.beginTransaction();
-                        pill.setAmountInInventory(pill.getAmountInInventory() +
+                        Pill p = PillTracker.realm.createObject(Pill.class);
+                        p.setName(pill.getName());
+                        p.setDosage(pill.getDosage());
+                        p.setAmountInInventory(pill.getAmountInInventory() +
                                 Integer.parseInt(pillsBought.getText().toString().trim()));
-//                        mDataset.get(position).removeFromRealm();
+                        p.setAmountTillShopping(pill.getAmountTillShopping());
+                        p.setUpdatedDate(Calendar.getInstance().getTime());
+                        p.setEditHistories(pill.getEditHistories());
+                        p.getEditHistories().add(histo);
+                        pill.removeFromRealm();
                         PillTracker.realm.commitTransaction();
 
                         mDataset.remove(position);

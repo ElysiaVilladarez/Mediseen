@@ -1,14 +1,17 @@
 package mediseen.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
+import android.view.View;
 import android.widget.TextView;
 
 import mediseen.customtextview.TextViewPlus;
+import mediseen.work.pearlsantos.mediseen.MainActivity;
 import mediseen.work.pearlsantos.mediseen.R;
 
 /**
@@ -33,6 +36,14 @@ public class LoginPage extends AppCompatActivity {
 
 
         ((TextViewPlus) findViewById(R.id.mediseenLabel)).setText(builder, TextView.BufferType.SPANNABLE);
+
+
+    }
+
+    public void login(View view){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        finish();
     }
 
 }

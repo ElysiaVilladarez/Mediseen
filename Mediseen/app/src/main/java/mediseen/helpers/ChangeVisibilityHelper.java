@@ -1,4 +1,4 @@
-package mediseen;
+package mediseen.helpers;
 
 import android.view.View;
 import android.view.ViewGroup;

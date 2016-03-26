@@ -1,4 +1,4 @@
-package mediseen.pilltracker;
+package mediseen.pilltracker.shoppinglist;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,11 +14,11 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 
 import io.realm.RealmResults;
-import mediseen.CreateNoDisplay;
+import mediseen.helpers.CreateNoDisplay;
 import mediseen.database.Pill;
 import mediseen.database.ShoppingList;
+import mediseen.pilltracker.PillTracker;
 import mediseen.pilltracker.adapters.ShoppingListAdapter;
-import mediseen.pilltracker.inventoryFragments.DividerItemDecoration;
 import mediseen.work.pearlsantos.mediseen.R;
 
 /**

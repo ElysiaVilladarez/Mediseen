@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#144377</color>
 
     <!--Background Colors-->
     <color name="backgroundGreen">#0BB794</color>
@@ -10,6 +10,7 @@
     <color name="backgroundBlue">#144377</color>
 
     <color name="buttonWhenPressed">#53CCB2</color>
+    <color name="hintColor">#ADD8E6</color>
 
     <!--TabLayout of PillTracker Colors-->
     <color name="tabSelected">#F4F4F4</color>

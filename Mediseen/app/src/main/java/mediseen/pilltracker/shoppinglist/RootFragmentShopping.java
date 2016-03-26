@@ -1,4 +1,4 @@
-package mediseen.pilltracker;
+package mediseen.pilltracker.shoppinglist;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import mediseen.FragmentReplace;
+import mediseen.helpers.FragmentReplace;
 import mediseen.work.pearlsantos.mediseen.R;
 
 /**

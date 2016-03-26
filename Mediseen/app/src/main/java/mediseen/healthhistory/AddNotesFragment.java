@@ -2,17 +2,15 @@ package mediseen.healthhistory;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
-import mediseen.FragmentReplace;
+import mediseen.helpers.FragmentReplace;
 import mediseen.customtextview.ButtonPlus;
 import mediseen.database.Notes;
 import mediseen.work.pearlsantos.mediseen.R;
@@ -30,19 +28,24 @@ public class AddNotesFragment extends Fragment {
         ((ButtonPlus) rootView.findViewById(R.id.saveButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HealthHistory.realm.beginTransaction();
-                Notes n = HealthHistory.realm.createObject(Notes.class);
-                n.setTitle(((EditText) rootView.findViewById(R.id.title)).getText().toString().trim());
-                n.setText(((EditText) rootView.findViewById(R.id.text)).getText().toString().trim());
-                n.setVersion(1);
-               // SimpleDateFormat f = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
-                Calendar c = Calendar.getInstance();
-                n.setUpdatedDate(c.getTime());
-                HealthHistory.realm.commitTransaction();
+                 EditText title = (EditText) rootView.findViewById(R.id.title);
+                EditText text = (EditText) rootView.findViewById(R.id.text);
+                if(!title.getText().toString().trim().isEmpty() && !text.getText().toString().trim().isEmpty()){
+                    HealthHistory.realm.beginTransaction();
+                    Notes n = HealthHistory.realm.createObject(Notes.class);
+                    n.setTitle(title.getText().toString().trim().toUpperCase());
+                    n.setText(text.getText().toString().trim());
+                    n.setVersion(1);
+                    // SimpleDateFormat f = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+                    Calendar c = Calendar.getInstance();
+                    n.setUpdatedDate(c.getTime());
+                    HealthHistory.realm.commitTransaction();
 
-                FragmentReplace.replaceFragment(AddNotesFragment.this, R.id.root_frame, ViewNoteFragment.newInstance(
-                        HealthHistory.notes.size()-1));
-
+                    FragmentReplace.replaceFragment(AddNotesFragment.this, R.id.root_frame, ViewNoteFragment.newInstance(
+                            HealthHistory.notes.size() - 1));
+                } else {
+                    Toast.makeText(getActivity(), R.string.fillDetails, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

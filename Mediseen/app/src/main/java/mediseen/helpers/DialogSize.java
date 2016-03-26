@@ -1,4 +1,4 @@
-package mediseen;
+package mediseen.helpers;
 
 import android.app.Activity;
 import android.app.Dialog;

@@ -17,7 +17,7 @@
         android:paddingBottom="@dimen/smalMargin"
         android:paddingTop="@dimen/smalMargin"
         android:text="HEALTH HISTORY"
-        android:textSize="@dimen/headerTextSize1" />
+        android:textSize="@dimen/titleText" />
 
 
     <EditText

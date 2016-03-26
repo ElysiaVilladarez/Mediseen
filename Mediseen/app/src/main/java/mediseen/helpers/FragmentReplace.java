@@ -1,4 +1,4 @@
-package mediseen;
+package mediseen.helpers;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;

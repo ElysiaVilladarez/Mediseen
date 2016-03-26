@@ -8,19 +8,24 @@
     <dimen name="smallButtonsDistance">10dp</dimen>
     <dimen name="largeMargin">35dp</dimen>
     <dimen name="buttonMargin">40dp</dimen>
-    <dimen name="buttonTextSize">15dp</dimen>
+    <dimen name="buttonTextSize">18dp</dimen>
     <dimen name="buttonHeight">40dp</dimen>
     <dimen name="logoMarkHeight">180dp</dimen>
     <dimen name="logoMarkWidth">180dp</dimen>
     <dimen name="logoMarkHeightSmall">100dp</dimen>
     <dimen name="logoMarkWidthSmall">100dp</dimen>
 
+    <dimen name="headlineText">33sp</dimen>
+    <dimen name="titleText">18sp</dimen>
+    <dimen name="bodyText">18sp</dimen>
+    <dimen name="additionalText">16sp</dimen>
+    <dimen name="numbers">50sp</dimen>
 
 
     <dimen name="circleLogoSize">20dp</dimen>
-    <dimen name="headerTextSize1">19sp</dimen>
-    <dimen name="headerTextSize2">15sp</dimen>
-    <dimen name="bigHeader">25sp</dimen>
+    <!--<dimen name="headerTextSize1">19sp</dimen>-->
+    <!--<dimen name="headerTextSize2">15sp</dimen>-->
+    <!--<dimen name="bigHeader">25sp</dimen>-->
 	<dimen name="titleTextSize">18sp</dimen>
     <dimen name="smalMargin">15dp</dimen>
     <dimen name="iconPadding">40dp</dimen>

@@ -3,10 +3,6 @@ package mediseen.healthhistory;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,13 +14,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-import mediseen.DialogSize;
-import mediseen.FragmentReplace;
+import mediseen.helpers.DialogSize;
+import mediseen.helpers.FragmentReplace;
 import mediseen.customtextview.ButtonPlus;
 import mediseen.customtextview.TextViewPlus;
 import mediseen.database.Notes;
 import mediseen.database.NotesHistory;
-import mediseen.pilltracker.adapters.PillEditHistoryAdapter;
 import mediseen.work.pearlsantos.mediseen.R;
 
 /**
@@ -110,7 +105,7 @@ public class EditNotesFragment extends Fragment {
 //              SimpleDateFormat f = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
 
                 Notes newNote = new Notes();
-                newNote.setTitle(title.getText().toString().trim());
+                newNote.setTitle(title.getText().toString().trim().toUpperCase());
                 newNote.setText(text.getText().toString().trim());
                 newNote.setUpdatedDate(Calendar.getInstance().getTime());
                 newNote.setVersion(note.getVersion() + 1);

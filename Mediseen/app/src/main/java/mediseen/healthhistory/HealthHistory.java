@@ -10,9 +10,7 @@ import android.view.ViewGroup;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
-import mediseen.FragmentReplace;
 import mediseen.database.Notes;
-import mediseen.pilltracker.inventoryFragments.InventoryFragment;
 import mediseen.work.pearlsantos.mediseen.R;
 
 /**

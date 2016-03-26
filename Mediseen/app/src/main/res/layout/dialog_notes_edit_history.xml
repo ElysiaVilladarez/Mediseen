@@ -13,7 +13,7 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/headerTextSize1"
+            android:textSize="@dimen/titleText"
             android:text="EDIT HISTORY"
             android:textColor="@android:color/white"/>
     </FrameLayout>
@@ -28,20 +28,21 @@
 
         <mediseen.customtextview.TextViewPlus
             android:id="@+id/title"
-            style="@style/signikaRegular"
+            style="@style/sourceSansProBlack"
             android:paddingTop="@dimen/smalMargin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:text="CHECK-Up"
-            android:textSize="20sp" />
+            android:textColor="@color/headerColor"
+            android:textSize="@dimen/titleText" />
 
         <mediseen.customtextview.TextViewPlus
-            style="@style/signikaLight"
+            style="@style/sourceSansProRegular"
             android:text="Monday, February 30, 2016"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            android:textSize="@dimen/additionalText"
             android:paddingBottom="@dimen/smalMargin"
             android:id="@+id/date" />
 
@@ -56,7 +57,7 @@
 
             <mediseen.customtextview.TextViewPlus
                 android:id="@+id/text"
-                android:textSize="@dimen/headerTextSize2"
+                android:textSize="@dimen/additionalText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/lorem_ipsum" />
@@ -77,7 +78,7 @@
             android:id="@+id/backButton"
             style="@style/shortButtonStyle"
             android:layout_marginLeft="@dimen/smallButtonsDistance"
-            android:text="BACK" />
+            android:text="@string/back" />
 
     </LinearLayout>
 

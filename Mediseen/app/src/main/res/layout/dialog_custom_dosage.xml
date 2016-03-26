@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,59 +10,64 @@
         <mediseen.customtextview.TextViewPlus
             style="@style/sourceSansProBlack"
             android:layout_gravity="center"
+            android:id="@+id/deletingTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/titleText"
-            android:text="EDIT HISTORY"
+            android:text="CUSTOM DOSAGE"
             android:textColor="@android:color/white"/>
     </FrameLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.3"
+        android:layout_weight="0.5"
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/largeMargin"
         android:paddingRight="@dimen/largeMargin"
         android:orientation="vertical">
 
-        <mediseen.customtextview.TextViewPlus
-            android:id="@+id/pillName"
-            style="@style/sourceSansProBlack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MEDICINE"
-            android:textSize="@dimen/titleText" />
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight = "1"
+            android:solidColor="@color/backgroundGreen"
+            android:layout_gravity="center"
+            android:id="@+id/pillNumber"/>
+        <FrameLayout
+            android:layout_width = "match_parent"
+            android:layout_height = "0dp"
+            android:layout_weight = "0.7">
+            <EditText
+                style="@style/textField"
+                android:layout_width="match_parent"
+                android:layout_gravity = "center"
+                android:id="@+id/frequency"
+                android:hint="Frequency"/>
+        </FrameLayout>
 
-        <mediseen.customtextview.TextViewPlus
-            android:id="@+id/dosage"
-            style="@style/sourceSansProRegular"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1 pill, once a day"
-            android:textSize="@dimen/additionalText" />
     </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/pillHistory"
-        android:layout_gravity="center"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:scrollbarStyle="outsideOverlay"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.3"
+        android:layout_weight="0.5"
         android:layout_gravity="center"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/smalMargin">
 
         <mediseen.customtextview.ButtonPlus
-            android:id="@+id/backButton"
+            android:id="@+id/createButton"
+            style="@style/shortButtonStyle"
+            android:layout_marginRight="@dimen/smallButtonsDistance"
+            android:text="CREATE" />
+
+        <mediseen.customtextview.ButtonPlus
+            android:id="@+id/cancelButton"
             style="@style/shortButtonStyle"
             android:layout_marginLeft="@dimen/smallButtonsDistance"
-            android:text="@string/back" />
+            android:text="@string/cancel" />
 
     </LinearLayout>
 

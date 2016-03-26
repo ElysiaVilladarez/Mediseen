@@ -1,4 +1,4 @@
-package mediseen;
+package mediseen.helpers;
 
 import android.app.Activity;
 import android.os.Build;
@@ -23,10 +23,10 @@ import mediseen.work.pearlsantos.mediseen.R;
 public class CreateNoDisplay {
     public static ViewGroup noDisplay(String alert, ViewGroup wholeLayout, Fragment fragment){
         final Fragment frag = fragment;
-        final FrameLayout noPillsLayout = new FrameLayout(frag.getActivity());
+        final FrameLayout mainLayout = new FrameLayout(frag.getActivity());
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
-        noPillsLayout.setLayoutParams(layoutParams);
+        mainLayout.setLayoutParams(layoutParams);
 
         ImageView logo = new ImageView(frag.getActivity());
         Picasso.with(frag.getActivity()).load(R.drawable.logomark).resizeDimen(R.dimen.logoMarkWidth,
@@ -36,24 +36,28 @@ public class CreateNoDisplay {
         layoutParams2.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
         logo.setLayoutParams(layoutParams2);
 
-        TextViewPlus noPillsText = new TextViewPlus(frag.getActivity());
-        noPillsText.setText(alert);
-        noPillsText.setGravity(Gravity.START);
+        TextViewPlus noThingsText = new TextViewPlus(frag.getActivity());
+        noThingsText.setText(alert);
+        noThingsText.setGravity(Gravity.START);
         if (Build.VERSION.SDK_INT < 23) {
-            noPillsText.setTextAppearance(frag.getActivity(), R.style.bigTextStyle);
+            noThingsText.setTextAppearance(frag.getActivity(), R.style.bigTextStyle);
         } else {
-            noPillsText.setTextAppearance(R.style.bigTextStyle);
+            noThingsText.setTextAppearance(R.style.bigTextStyle);
         }
         final FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         layoutParams3.gravity = Gravity.CENTER;
-        noPillsText.setLayoutParams(layoutParams3);
+        noThingsText.setLayoutParams(layoutParams3);
 
-        noPillsLayout.addView(logo);
-        noPillsLayout.addView(noPillsText);
+        mainLayout.addView(logo);
+        mainLayout.addView(noThingsText);
 
-        wholeLayout.addView(noPillsLayout);
-        noPillsLayout.setVisibility(View.GONE);
-        return noPillsLayout;
+        wholeLayout.addView(mainLayout);
+        mainLayout.setVisibility(View.GONE);
+        return mainLayout;
     }
+
+//    public static fillNecessaryDetails(ArrayList){
+//
+//    }
 }

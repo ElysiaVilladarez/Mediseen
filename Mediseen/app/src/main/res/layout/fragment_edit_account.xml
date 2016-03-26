@@ -27,57 +27,14 @@
             android:textSize="@dimen/titleText" />
 
         <mediseen.customtextview.ButtonPlus
-            android:id="@+id/backButton"
+            android:id="@+id/editButton"
             style="@style/shortButtonStyle"
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/smalMargin"
-            android:text="@string/back" />
+            android:text="@string/edit" />
 
     </LinearLayout>
 
-
-    <mediseen.customtextview.TextViewPlus
-        android:id="@+id/title"
-        style="@style/sourceSansProBlack"
-        android:textColor="@color/headerColor"
-        android:paddingLeft="@dimen/smalMargin"
-        android:paddingRight="@dimen/smalMargin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:text="CHECK-Up"
-        android:textSize="@dimen/titleText" />
-
-    <mediseen.customtextview.TextViewPlus
-        style="@style/sourceSansProRegular"
-        android:text="Monday, February 30, 2016"
-        android:textSize="@dimen/additionalText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/smalMargin"
-        android:paddingRight="@dimen/smalMargin"
-        android:paddingBottom="@dimen/smalMargin"
-        android:id="@+id/date" />
-
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        android:scrollbars="vertical"
-        android:layout_weight="1">
-
-        <mediseen.customtextview.TextViewPlus
-            android:id="@+id/text"
-            android:textSize="@dimen/additionalText"
-            android:layout_width="match_parent"
-            android:layout_height="210dp"
-            android:paddingLeft="@dimen/smalMargin"
-            android:paddingRight="@dimen/smalMargin"
-            android:text="@string/lorem_ipsum" />
-
-    </ScrollView>
 
     <!--<EditText-->
     <!--style="@style/textField"-->
@@ -86,12 +43,6 @@
     <!--android:gravity="top"-->
     <!--android:scrollbars="vertical"/>-->
 
-    <mediseen.customtextview.ButtonPlus
-        android:id="@+id/viewHistoryButton"
-        style="@style/longButtonStyle"
-        android:layout_margin="30dp"
-        android:text="@string/viewHistory" />
-
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -99,18 +50,18 @@
         android:orientation="horizontal">
 
         <mediseen.customtextview.ButtonPlus
-            android:id="@+id/editButton"
+            android:id="@+id/backButton"
             style="@style/shortButtonStyle"
             android:layout_marginBottom="@dimen/smalMargin"
             android:layout_marginRight="@dimen/smallButtonsDistance"
-            android:text="@string/edit" />
+            android:text="BACK" />
 
         <mediseen.customtextview.ButtonPlus
-            android:id="@+id/deleteButton"
+            android:id="@+id/saveButton"
             style="@style/shortButtonStyle"
             android:layout_marginBottom="@dimen/smalMargin"
             android:layout_marginLeft="@dimen/smallButtonsDistance"
-            android:text="@string/delete" />
+            android:text="@string/save" />
 
     </LinearLayout>
 </LinearLayout>

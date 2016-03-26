@@ -14,13 +14,13 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="@dimen/textFieldMargin"/>
 
-    <EditText
-        style="@style/textField"
-        android:hint="Dosage"
+    <Spinner
         android:id="@+id/dosage"
+        style="@style/textField"
         android:layout_gravity="center_horizontal"
         android:layout_margin="@dimen/textFieldMargin"
-        android:scrollbarStyle="outsideOverlay"/>
+        android:scrollbarStyle="outsideOverlay" />
+
 
     <EditText
         style="@style/textField"
