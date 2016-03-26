@@ -45,6 +45,30 @@
     <style name="sourceSansProBlackIt" parent="@android:style/Widget.TextView">
         <item name="font">fonts/SourceSansPro-BlackIt.otf</item>
     </style>
+    <style name="sourceSansProExtraLight" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SourceSansPro-ExtraLight.otf</item>
+    </style>
+    <style name="sourceSansProExtraLightIt" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SourceSansPro-ExtraLightIt.otf</item>
+    </style>
+    <style name="sourceSansProIt" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SourceSansPro-It.otf</item>
+    </style>
+    <style name="sourceSansProLight" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SourceSansPro-Light.otf</item>
+    </style>
+    <style name="sourceSansProLightIt" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SourceSansPro-LightIt.otf</item>
+    </style>
+    <style name="sourceSansProRegular" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SourceSansPro-Regular.otf</item>
+    </style>
+    <style name="sourceSansProSemibold" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SourceSansPro-Semibold.otf</item>
+    </style>
+    <style name="sourceSansProSemiboldIt" parent="@android:style/Widget.TextView">
+        <item name="font">fonts/SourceSansPro-SemiboldIt.otf</item>
+    </style>
 
     <!--Changing font size of TabLayout Header-->
     <style name="CustomTextSize" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">

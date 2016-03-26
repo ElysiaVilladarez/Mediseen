@@ -14,7 +14,8 @@
     <dimen name="logoMarkWidth">180dp</dimen>
     <dimen name="logoMarkHeightSmall">100dp</dimen>
     <dimen name="logoMarkWidthSmall">100dp</dimen>
-
+    <dimen name="textFieldMarginSmall">10dp</dimen>
+    <dimen name="textViewSize">136dp</dimen>
 
 
     <dimen name="circleLogoSize">20dp</dimen>
@@ -25,16 +26,27 @@
     <dimen name="smalMargin">15dp</dimen>
     <dimen name="iconPadding">40dp</dimen>
     <dimen name="listviewPadding">20dp</dimen>
+    <dimen name="textViewMargin">36dp</dimen>
+
+
+    <!--for the forms fragment-->
+    <dimen name="upperPadding">30dp</dimen>
+    <dimen name="lowerPadding">25dp</dimen>
+    <dimen name="lowerPadding2">10dp</dimen>
 
 
     <!--android material design typography-->
     <dimen name="display2">45sp</dimen>
     <dimen name="display1">34sp</dimen>
     <dimen name="headline">24sp</dimen>
+    <dimen name="subheading3">18sp</dimen>
     <dimen name="subheading2">16sp</dimen>
     <dimen name="subheading1">15sp</dimen>
     <dimen name="body2">14sp</dimen>
     <dimen name="body1">13sp</dimen>
+
+    <dimen name="smallText">10sp</dimen>
+
 
 
 

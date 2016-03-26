@@ -1,0 +1,142 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center|top"
+    tools:context="mediseen.accountsettings.AccountSettings">
+
+    <LinearLayout
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProBlack"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingBottom="20dp"
+                android:paddingTop="@dimen/upperPadding"
+                android:textColor="@color/backgroundBlue"
+                android:text="ACCOUNT SETTINGS"
+                android:textSize="@dimen/headerTextSize1"
+                />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <EditText
+            style="@style/textField"
+            android:hint="Username"
+            android:textColorHint="@color/backgroundBlue"
+            android:id="@+id/userName"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/textFieldMarginSmall"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <EditText
+            style="@style/textField"
+            android:hint="Password"
+            android:textColorHint="@color/backgroundBlue"
+            android:id="@+id/password"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/textFieldMarginSmall"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <EditText
+            style="@style/textField"
+            android:hint="Medical Condition"
+            android:textColorHint="@color/backgroundBlue"
+            android:id="@+id/medicalCondition"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/textFieldMarginSmall"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <EditText
+            style="@style/textField"
+            android:hint="Name of Senior Citizen"
+            android:textColorHint="@color/backgroundBlue"
+            android:id="@+id/nameOfSeniorCitizen"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/textFieldMarginSmall"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <EditText
+            style="@style/textField"
+            android:hint="Name of family doctor"
+            android:textColorHint="@color/backgroundBlue"
+            android:id="@+id/nameOfFamilyDoctor"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/textFieldMarginSmall"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <EditText
+            style="@style/textField"
+            android:hint="Emergency of contact number"
+            android:textColorHint="@color/backgroundBlue"
+            android:id="@+id/emergencyContactNumber"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/textFieldMarginSmall"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <mediseen.customtextview.ButtonPlus
+            style="@style/shortButtonStyle"
+            android:text="@string/cancel"
+            android:layout_margin="@dimen/smalMargin"
+            android:id="@+id/cancelEditting" />
+        <mediseen.customtextview.ButtonPlus
+            style="@style/shortButtonStyle"
+            android:text="@string/save"
+            android:layout_margin="@dimen/smalMargin"
+            android:id="@+id/saveAccountChanges" />
+
+    </LinearLayout>
+
+</LinearLayout>
