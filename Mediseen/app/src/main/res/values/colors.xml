@@ -18,4 +18,5 @@
     <color name="headerColor">#144377</color>
 
     <color name="itemNotesShadow">#9FB4C9</color>
+    <color name="black">#000000</color>
 </resources>

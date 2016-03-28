@@ -25,6 +25,7 @@
 
 
     <dimen name="circleLogoSize">20dp</dimen>
+    <dimen name="imageSize">120dp</dimen>
     <!--<dimen name="headerTextSize1">19sp</dimen>-->
     <!--<dimen name="headerTextSize2">15sp</dimen>-->
     <!--<dimen name="bigHeader">25sp</dimen>-->
@@ -50,6 +51,7 @@
     <dimen name="subheading1">15sp</dimen>
     <dimen name="body2">14sp</dimen>
     <dimen name="body1">13sp</dimen>
+    <dimen name="body">12sp</dimen>
 
     <dimen name="smallText">10sp</dimen>
 

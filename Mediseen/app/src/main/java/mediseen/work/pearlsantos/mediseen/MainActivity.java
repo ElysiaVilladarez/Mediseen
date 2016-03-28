@@ -36,6 +36,7 @@ package mediseen.work.pearlsantos.mediseen;
     // android.widget.Toolbar;
 
     import mediseen.customtextview.TextViewPlus;
+    import mediseen.generalinfo.GeneralInfo;
     import mediseen.healthhistory.HealthHistory;
     import mediseen.accountsettings.AccountSettings;
     import mediseen.home.Greeting;
@@ -137,7 +138,7 @@ package mediseen.work.pearlsantos.mediseen;
                     root.toggleMenu();
                     break;
                 case 3:
-                    fragment = new Greeting(); //should be general information
+                    fragment = new GeneralInfo(); //should be general information
                     root.toggleMenu();
                     break;
                 case 4:
