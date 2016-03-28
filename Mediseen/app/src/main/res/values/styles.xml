@@ -126,5 +126,22 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!--&lt;!&ndash;Search View&ndash;&gt;-->
+    <!--<style name="ThemeOverlay.MyApp.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">-->
+        <!--<item name="autoCompleteTextViewStyle">@style/Widget.MyApp.AutoCompleteTextView.SearchView</item>-->
+        <!--<item name="searchViewStyle">@style/Widget.MyApp.SearchView</item>-->
+    <!--</style>-->
+
+    <!--<style name="Widget.MyApp.AutoCompleteTextView.SearchView" parent="Widget.AppCompat.AutoCompleteTextView">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+        <!--<item name="android:textColorHint">@color/backgroundGray</item>-->
+        <!--<item name="android:searchHintIcon">@mipmap/ic_search_white_24dp</item>-->
+    <!--</style>-->
+
+    <!--<style name="Widget.MyApp.SearchView" parent="Widget.AppCompat.SearchView">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+        <!--<item name="android:searchHintIcon">@mipmap/ic_search_white_24dp</item>-->
+    <!--</style>-->
+
 
 </resources>

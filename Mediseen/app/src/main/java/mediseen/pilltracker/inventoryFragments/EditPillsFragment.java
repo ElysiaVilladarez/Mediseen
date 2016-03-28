@@ -30,6 +30,7 @@ import mediseen.customtextview.ButtonPlus;
 import mediseen.customtextview.TextViewPlus;
 import mediseen.database.Pill;
 import mediseen.database.PillHistory;
+import mediseen.login.CheckStart;
 import mediseen.pilltracker.PillTracker;
 import mediseen.pilltracker.shoppinglist.ShoppingListFragment;
 import mediseen.pilltracker.adapters.PillEditHistoryAdapter;
@@ -43,7 +44,6 @@ public class EditPillsFragment extends Fragment {
     private EditText pillName, amountInInventory;
 
     Spinner spinner;
-    final String prefName = "USER DATA";
     final String arrayKey = "DOSAGE OPTIONS";
     private ArrayList<String> dosageOptions;
 
@@ -69,7 +69,7 @@ public class EditPillsFragment extends Fragment {
         amountInInventory = (EditText) rootView.findViewById(R.id.amountInInventory);
         pillName.setText(pill.getName());
         amountInInventory.setText(Integer.toString(pill.getAmountInInventory()));
-        SharedPreferences sp = getActivity().getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        SharedPreferences sp = getActivity().getSharedPreferences(CheckStart.PREFS_NAME, Context.MODE_PRIVATE);
         Set<String> set = sp.getStringSet(arrayKey, null);
 
         if(set==null){
@@ -158,7 +158,7 @@ public class EditPillsFragment extends Fragment {
                 pill.removeFromRealm();
                 PillTracker.realm.commitTransaction();
 
-                SharedPreferences sp = getActivity().getSharedPreferences(prefName,Context.MODE_PRIVATE);
+                SharedPreferences sp = getActivity().getSharedPreferences(CheckStart.PREFS_NAME,Context.MODE_PRIVATE);
                 SharedPreferences.Editor edit = sp.edit();
                 Set<String> set = new HashSet<String>();
                 set.addAll(dosageOptions);
@@ -173,7 +173,7 @@ public class EditPillsFragment extends Fragment {
         ((ButtonPlus) rootView.findViewById(R.id.cancelButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences sp = getActivity().getSharedPreferences(prefName,Context.MODE_PRIVATE);
+                SharedPreferences sp = getActivity().getSharedPreferences(CheckStart.PREFS_NAME,Context.MODE_PRIVATE);
                 SharedPreferences.Editor edit = sp.edit();
                 Set<String> set = new HashSet<String>();
                 set.addAll(dosageOptions);

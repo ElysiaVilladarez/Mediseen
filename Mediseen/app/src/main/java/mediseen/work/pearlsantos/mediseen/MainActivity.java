@@ -22,6 +22,7 @@ package mediseen.work.pearlsantos.mediseen;
     import android.support.v4.app.Fragment;
     import android.support.v4.app.FragmentManager;
     import android.support.v7.app.*;
+    import android.view.ViewGroup;
     import android.widget.SearchView;
     import android.support.v7.widget.Toolbar;
     import android.view.Menu;
@@ -89,9 +90,10 @@ package mediseen.work.pearlsantos.mediseen;
             int searchImgId = getResources().getIdentifier("android:id/search_button", null, null);
             ImageView v = (ImageView) searchView.findViewById(searchImgId);
             v.setImageResource(R.mipmap.ic_search_white_24dp);
-            int searchHintId = getResources().getIdentifier("android:id/search_mag_icon", null, null);
+            int searchHintId = searchView.getContext().getResources().getIdentifier("android:id/search_mag_icon", null, null);
             ImageView w = (ImageView) searchView.findViewById(searchHintId);
             w.setImageResource(R.mipmap.ic_search_white_24dp);
+            changeSearchViewTextColor(searchView);
 //            .search_mag_icon)
 
 
@@ -182,7 +184,19 @@ package mediseen.work.pearlsantos.mediseen;
             finish();
         }
 
-
+        private void changeSearchViewTextColor(View view) {
+            if (view != null) {
+                if (view instanceof TextView) {
+                    ((TextView) view).setTextColor(Color.WHITE);
+                    return;
+                } else if (view instanceof ViewGroup) {
+                    ViewGroup viewGroup = (ViewGroup) view;
+                    for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                        changeSearchViewTextColor(viewGroup.getChildAt(i));
+                    }
+                }
+            }
+        }
     }
 
 

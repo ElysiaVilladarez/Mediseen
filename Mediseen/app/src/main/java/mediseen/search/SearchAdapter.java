@@ -43,7 +43,7 @@ public class SearchAdapter extends RecyclerView
     public ViewHolder onCreateViewHolder(ViewGroup parent,
                                          int viewType) {
         View view = LayoutInflater.from(context)
-                .inflate(R.layout.item_pill_inventory, parent, false);
+                .inflate(R.layout.item_search_results, parent, false);
         ViewHolder dataObjectHolder = new ViewHolder(view);
         return dataObjectHolder;
     }

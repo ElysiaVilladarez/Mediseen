@@ -29,6 +29,7 @@ import mediseen.customtextview.ButtonPlus;
 import mediseen.helpers.DialogSize;
 import mediseen.helpers.FragmentReplace;
 import mediseen.database.Pill;
+import mediseen.login.CheckStart;
 import mediseen.pilltracker.PillTracker;
 import mediseen.work.pearlsantos.mediseen.R;
 
@@ -37,13 +38,12 @@ import mediseen.work.pearlsantos.mediseen.R;
  */
 public class AddPillsFragment extends Fragment {
     private Spinner spinner;
-    final String prefName = "USER DATA";
     final String arrayKey = "DOSAGE OPTIONS";
     private ArrayList<String> dosageOptions;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_add_pill, container, false);
-        SharedPreferences sp = getActivity().getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        SharedPreferences sp = getActivity().getSharedPreferences(CheckStart.PREFS_NAME, Context.MODE_PRIVATE);
         Set<String> set = sp.getStringSet(arrayKey, null);
 
         if(set==null){
@@ -116,7 +116,7 @@ public class AddPillsFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                SharedPreferences sp = getActivity().getSharedPreferences(prefName,Context.MODE_PRIVATE);
+                SharedPreferences sp = getActivity().getSharedPreferences(CheckStart.PREFS_NAME,Context.MODE_PRIVATE);
                 SharedPreferences.Editor edit = sp.edit();
                 Set<String> set = new HashSet<String>();
                 set.addAll(dosageOptions);
@@ -143,7 +143,7 @@ public class AddPillsFragment extends Fragment {
                     pill1.setUpdatedDate(Calendar.getInstance().getTime());
                     PillTracker.realm.commitTransaction();
 
-                    SharedPreferences sp = getActivity().getSharedPreferences(prefName, Context.MODE_PRIVATE);
+                    SharedPreferences sp = getActivity().getSharedPreferences(CheckStart.PREFS_NAME, Context.MODE_PRIVATE);
                     SharedPreferences.Editor edit = sp.edit();
                     Set<String> set = new HashSet<String>();
                     set.addAll(dosageOptions);

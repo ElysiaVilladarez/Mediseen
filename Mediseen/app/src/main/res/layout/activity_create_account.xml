@@ -8,8 +8,13 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center_horizontal"
-        android:paddingTop= "30dp">
+        android:layout_gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center">
 
         <ImageView
             android:layout_width="@dimen/logoMarkWidthSmall"
@@ -25,29 +30,18 @@
             android:text="mediseen"
             android:layout_gravity="center"
             android:id="@+id/mediseenLabel" />
-
-        <EditText
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:hint="username"
-            android:textColorHint="#ADD8E6"
-            android:layout_marginTop="40dp"
-            android:id="@+id/username"/>
-        <EditText
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:hint="password"
-            android:textColorHint="#ADD8E6"
-            android:inputType="textPassword"
-            android:layout_gravity="center"
-            android:layout_marginBottom="40dp"
-            android:id="@+id/password"/>
-
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
         <mediseen.customtextview.ButtonPlus
             style = "@style/longButtonStyle"
-            android:text="LOG-IN"
-            android:onClick="login"/>
-
+            android:text="CREATE AN ACCOUNT"
+            android:layout_gravity="center"
+            android:id="@+id/createAccount"
+            android:layout_marginBottom="@dimen/smalMargin"/>
+        </FrameLayout>
     </LinearLayout>
+
 </FrameLayout>

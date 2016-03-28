@@ -23,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import io.realm.Case;
 import io.realm.Realm;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
@@ -76,16 +77,14 @@ public class SearchFragment extends Fragment {
         ArrayList<SearchObject> results = new ArrayList<>();
         RealmResults<Pill> pills;
         if(query.matches("[-+]?\\d*\\.?\\d+")) {
-            pills = realm.where(Pill.class).contains("name", query).or().contains("dosage", query).
-                    or().equalTo("amountInInventory", Integer.parseInt(query)).or().equalTo("amountTillShopping", Integer.parseInt(query)).or().
-                    contains("updatedDate", query).findAll();
+            pills = realm.where(Pill.class).contains("name", query, Case.INSENSITIVE).or().contains("dosage", query, Case.INSENSITIVE).
+                    or().equalTo("amountInInventory", Integer.parseInt(query)).or().equalTo("amountTillShopping", Integer.parseInt(query)).findAll();
         } else{
-            pills = realm.where(Pill.class).contains("name", query).or().contains("dosage", query).
-                    or().contains("updatedDate", query).findAll();
+            pills = realm.where(Pill.class).contains("name", query, Case.INSENSITIVE).or().contains("dosage", query, Case.INSENSITIVE).
+                    or().findAll();
         }
 
-        RealmResults<Notes> notes = realm.where(Notes.class).contains("title", query).or().contains("text", query).
-                or().contains("updatedDate", query).findAll();
+        RealmResults<Notes> notes = realm.where(Notes.class).contains("title", query, Case.INSENSITIVE).or().contains("text", query, Case.INSENSITIVE).findAll();
 
         for(Pill p: pills){
             SimpleDateFormat f = new SimpleDateFormat("dd MMMM yyyy, h:mm a");
@@ -94,7 +93,8 @@ public class SearchFragment extends Fragment {
             f.setDateFormatSymbols(symbols);
             String text = "Dosage: " + p.getDosage() + ", Amount in inventory: " + p.getAmountInInventory() +
                     ", Date Updated: " + f.format(p.getUpdatedDate());
-            results.add(new SearchObject(p.getName(), text));
+            SearchObject so = new SearchObject(p.getName(), text);
+            results.add(so);
         }
 
         for(Notes n: notes){
@@ -103,22 +103,24 @@ public class SearchFragment extends Fragment {
             symbols.setAmPmStrings(new String[]{"a.m.", "p.m."});
             f.setDateFormatSymbols(symbols);
             String text = "";
-            if(n.getText().toLowerCase().contains(query.toLowerCase())){
-                int where = n.getText().toLowerCase().indexOf(query.toLowerCase());
-                int start = 10;
-                int end = 10;
-                while(where != -1) {
-                    if((where - start) < 0){
-                        start = 0;
-                    } else start = 10;
-                    if((where + end) >= n.getText().length()){
-                        end = n.getText().length()-1;
-                    } else end = 10;
-
-                    text += "..." + n.getText().substring(where-start, where+end) + "...";
-                }
-            }
-            results.add(new SearchObject(n.getTitle(), text));
+//            if(n.getText().toLowerCase().contains(query.toLowerCase())){
+//                int where = n.getText().toLowerCase().indexOf(query.toLowerCase());
+//                int start = 10;
+//                int end = 10;
+//                while(where != -1) {
+//                    if((where - start) < 0){
+//                        start = 0;
+//                    } else start = 10;
+//                    if(((where + query.length()) + end) >= n.getText().length()){
+//                        end = n.getText().length()-1;
+//                    } else end = 10;
+//
+//                    text += "..." + n.getText().substring(where-start, (where + query.length()) + end) + "...";
+//                    where = n.getText().toLowerCase().indexOf(query.toLowerCase(), where+query.length());
+//                }
+//            }
+            SearchObject so = new SearchObject(n.getTitle(), n.getText());
+            results.add(so);
         }
 
         RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.searchResults);
@@ -126,7 +128,7 @@ public class SearchFragment extends Fragment {
         FrameLayout whole = (FrameLayout) rootView.findViewById(R.id.whole);
         if(results.isEmpty()){
             mf.setVisibility(View.GONE);
-            String noMatch = "Sorry, no item\nmatch '" + query + "'.";
+            String noMatch = "Sorry, no items\nmatch '" + query + "'.";
             CreateNoDisplay.noDisplay(noMatch, whole, this).setVisibility(View.VISIBLE);
         } else {
             mf.setVisibility(View.VISIBLE);

@@ -8,7 +8,7 @@
     <dimen name="smallButtonsDistance">10dp</dimen>
     <dimen name="largeMargin">35dp</dimen>
     <dimen name="buttonMargin">40dp</dimen>
-    <dimen name="buttonTextSize">18dp</dimen>
+    <dimen name="buttonTextSize">16dp</dimen>
     <dimen name="buttonHeight">40dp</dimen>
     <dimen name="logoMarkHeight">180dp</dimen>
     <dimen name="logoMarkWidth">180dp</dimen>

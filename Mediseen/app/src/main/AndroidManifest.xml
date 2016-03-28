@@ -11,10 +11,23 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustPan"
-            android:parentActivityName="mediseen.login.LoginPage">
+            android:parentActivityName="mediseen.login.SplashScreen">
         </activity>
         <activity
-            android:name="mediseen.login.LoginPage"
+            android:name="mediseen.login.CreateAccount"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan"
+            android:parentActivityName="mediseen.login.SplashScreen">
+        </activity>
+        <activity
+            android:name="mediseen.login.SetAccount"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan"
+            android:parentActivityName="mediseen.login.SplashScreen">
+        </activity>
+
+        <activity
+            android:name="mediseen.login.SplashScreen"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
@@ -22,6 +35,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name="mediseen.login.LoginPage"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan"
+            android:parentActivityName="mediseen.login.SplashScreen">>
         </activity>
         <!--<activity-->
             <!--android:name="mediseen.helpers.TestLayout"-->
