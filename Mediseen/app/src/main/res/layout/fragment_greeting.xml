@@ -1,33 +1,26 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="mediseen.home.Greeting">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <ImageView
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="center">
-        <ImageView
-            android:layout_width="@dimen/logoMarkWidth"
-            android:layout_height="@dimen/logoMarkHeight"
-            android:id="@+id/logo"
-            android:layout_gravity="center"/>
-        <mediseen.customtextview.TextViewPlus
-            style="@style/bigTextStyle"
-            android:text="Hi, I'm Ate Alma,\nyour senior citizen\nhealth buddy"
-            android:layout_width="@dimen/textFieldWidth"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:paddingBottom="@dimen/largeMargin"/>
-        <mediseen.customtextview.TextViewPlus
-            style="@style/sourceSansProRegular"
-            android:textSize="@dimen/additionalText"
-            android:text="@string/fisherman"
-            android:layout_width="@dimen/textFieldWidth"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:paddingBottom="@dimen/smalMargin"/>
+        android:layout_margin="@dimen/buttonMargin"
+        android:id="@+id/homeView"
+        android:layout_weight="0.5"/>
+    <mediseen.customtextview.TextViewPlus
+        style="@style/sourceSansProRegular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Track medications and note observations with your own senior citizen healthcare buddy now!"
+        android:layout_marginLeft="@dimen/buttonMargin"
+        android:layout_marginRight="@dimen/buttonMargin"
+        android:layout_marginBottom="@dimen/buttonMargin"
+        android:layout_gravity="center"
+        android:textSize="@dimen/headline"
+        android:layout_weight="1"/>
 
 
-    </LinearLayout>
-</FrameLayout>
+</LinearLayout>

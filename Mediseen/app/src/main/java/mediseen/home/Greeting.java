@@ -21,7 +21,7 @@ public class Greeting extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_greeting, container, false);
-        Picasso.with(getActivity()).load(R.drawable.logomark).fit().into((ImageView)rootView.findViewById(R.id.logo));
+        Picasso.with(getActivity()).load(R.drawable.home).fit().into((ImageView)rootView.findViewById(R.id.homeView));
         return rootView;
     }
 }
