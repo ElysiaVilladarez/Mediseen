@@ -142,8 +142,10 @@ public class EditPillsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 PillHistory histo = new PillHistory();
-                histo.setCreatedDate(pill.getUpdatedDate());
+                //histo.setCreatedDate(pill.getUpdatedDate());
+                histo.setCreatedDate(Calendar.getInstance().getTime());
                 histo.setAmountInInventory(pill.getAmountInInventory());
+
                 PillTracker.realm.beginTransaction();
                 Pill p = PillTracker.realm.createObject(Pill.class);
                 p.setName(pillName.getText().toString().trim().toUpperCase());

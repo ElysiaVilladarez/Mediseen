@@ -38,9 +38,11 @@ package mediseen.work.pearlsantos.mediseen;
     import mediseen.customtextview.TextViewPlus;
     import mediseen.healthhistory.HealthHistory;
     import mediseen.accountsettings.AccountSettings;
+    import mediseen.helpers.FragmentReplace;
     import mediseen.home.Greeting;
     import mediseen.login.LoginPage;
     import mediseen.pilltracker.PillTracker;
+    import mediseen.search.SearchFragment;
     import mediseen.viewgroup.FlyOutContainer;
 
     public class MainActivity extends AppCompatActivity {
@@ -94,7 +96,19 @@ package mediseen.work.pearlsantos.mediseen;
 
 
 
-            //searchView.setOnQueryTextListener(this);
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.content_frame, SearchFragment.newInstance(query)).commit();
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    return false;
+                }
+            });
 
 
             return true;
