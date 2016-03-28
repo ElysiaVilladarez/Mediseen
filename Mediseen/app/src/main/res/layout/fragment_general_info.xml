@@ -1,0 +1,366 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="mediseen.generalinfo.GeneralInfo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/imageSize"
+            android:layout_height="@dimen/imageSize"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/buttonMargin"
+            android:id="@+id/topImage"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/headlineText"
+                android:layout_marginLeft="@dimen/buttonMargin"
+                android:layout_marginRight="@dimen/buttonMargin"
+                android:layout_marginBottom="@dimen/buttonMargin"
+                android:text="Top 15 Elderly Health Concerns"
+                android:textColor="@color/backgroundBlue"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/buttonMargin"
+                android:layout_marginRight="@dimen/buttonMargin"
+                android:layout_marginBottom="@dimen/buttonMargin">
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="1. Arthritis"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="2.Heart Disease"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="3. Cancer"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="4. Respiratory Diseases"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="5. Alzheimer's Disease"
+                    android:textColor="@color/black"
+                    />
+
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="6. Osteoporosis"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="7. Diabetes"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="8. Influenza and Pneumonia"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="9. Falls"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="10. Substance Abuse"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="11. Obesity"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="12.Depression"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="13. Oral Health"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="14.Poverty"
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:padding="@dimen/fab_margin"
+                    android:text="15. Shingles"
+                    android:textColor="@color/black"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/fab_margin"
+                    android:orientation="horizontal">
+                    <mediseen.customtextview.TextViewPlus
+                        style="@style/sourceSansProRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/subheading3"
+                        android:text="Read more "
+                        android:textColor="@color/black"
+                        />
+                    <mediseen.customtextview.TextViewPlus
+                        style="@style/sourceSansProRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/subheading3"
+                        android:text=" here."
+                        android:id="@+id/here1"
+                        android:textColorLink="@color/backgroundGreen"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/imageSize"
+            android:layout_height="@dimen/imageSize"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/buttonMargin"
+            android:id="@+id/tipsImage"/>
+        <mediseen.customtextview.TextViewPlus
+            style="@style/sourceSansProRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/headlineText"
+            android:layout_marginLeft="@dimen/buttonMargin"
+            android:layout_marginRight="@dimen/buttonMargin"
+            android:layout_marginBottom="@dimen/buttonMargin"
+            android:text="Tips for Elderly Health Care"
+            android:textColor="@color/backgroundBlue"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/buttonMargin"
+            android:layout_marginRight="@dimen/buttonMargin"
+            android:layout_marginBottom="@dimen/buttonMargin">
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/subheading3"
+                android:padding="@dimen/fab_margin"
+                android:text="1. Ask them what they need"
+                android:textColor="@color/black"
+                />
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/body1"
+                android:paddingLeft="@dimen/fab_margin"
+                android:paddingRight="@dimen/fab_margin"
+                android:paddingBottom="@dimen/fab_margin"
+                android:text="Sometimes, being an attentive caregiver entails reading between the lines. Non-verbal signals such as silence or resistance may show underlying concerns. Asking them what they need may uncover the real reasons for their discomfort."
+                android:textColor="@color/black"
+                />
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/subheading3"
+                android:padding="@dimen/fab_margin"
+                android:text="2. Tell them your difficulties"
+                android:textColor="@color/black"
+                />
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/body1"
+                android:paddingLeft="@dimen/fab_margin"
+                android:paddingRight="@dimen/fab_margin"
+                android:paddingBottom="@dimen/fab_margin"
+                android:text="Honesty makes them more open to you. However, try to be more approachable than accusatory when talking about what makes things difficult for you."
+                android:textColor="@color/black"
+                />
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/subheading3"
+                android:padding="@dimen/fab_margin"
+                android:text="3. Let them be independent"
+                android:textColor="@color/black"
+                />
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/body1"
+                android:paddingLeft="@dimen/fab_margin"
+                android:paddingRight="@dimen/fab_margin"
+                android:paddingBottom="@dimen/fab_margin"
+                android:text="Taking care of elderly doesn't mean controlling their lives. Let them do things on their own because this will make them feel empowered to take care of themselves even when you're not always around."
+                android:textColor="@color/black"/>
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/subheading3"
+                android:padding="@dimen/fab_margin"
+                android:text="4. Involve them in decisions"
+                android:textColor="@color/black"
+                />
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/body1"
+                android:paddingLeft="@dimen/fab_margin"
+                android:paddingRight="@dimen/fab_margin"
+                android:paddingBottom="@dimen/fab_margin"
+                android:text="Offer suggestions but always leave the final decision up to them. Frame options as something they can try temporarily to see if it works rather than imposing them as permanent solutions."
+                android:textColor="@color/black"/>
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/subheading3"
+                android:padding="@dimen/fab_margin"
+                android:text="5. Ask others for help"
+                android:textColor="@color/black"
+                />
+
+            <mediseen.customtextview.TextViewPlus
+                style="@style/sourceSansProRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/body1"
+                android:paddingLeft="@dimen/fab_margin"
+                android:paddingRight="@dimen/fab_margin"
+                android:paddingBottom="@dimen/fab_margin"
+                android:text="Remember, you are not alone. If you need assistance, start at home. Other family members may be willing to help out. You can also try other home care services available to you."
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/fab_margin"
+                android:orientation="horizontal">
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:text="Read more "
+                    android:textColor="@color/black"
+                    />
+                <mediseen.customtextview.TextViewPlus
+                    style="@style/sourceSansProRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading3"
+                    android:text=" here."
+                    android:id="@+id/here2"
+                    android:textColorLink="@color/backgroundGreen"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
