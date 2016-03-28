@@ -90,7 +90,7 @@ package mediseen.work.pearlsantos.mediseen;
             int searchImgId = getResources().getIdentifier("android:id/search_button", null, null);
             ImageView v = (ImageView) searchView.findViewById(searchImgId);
             v.setImageResource(R.mipmap.ic_search_white_24dp);
-            int searchHintId = searchView.getContext().getResources().getIdentifier("android:id/search_mag_icon", null, null);
+            int searchHintId = searchView.getResources().getIdentifier("android:id/search_mag_icon", null, null);
             ImageView w = (ImageView) searchView.findViewById(searchHintId);
             w.setImageResource(R.mipmap.ic_search_white_24dp);
             changeSearchViewTextColor(searchView);
