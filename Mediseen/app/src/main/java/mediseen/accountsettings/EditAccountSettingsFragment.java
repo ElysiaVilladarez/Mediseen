@@ -14,6 +14,9 @@ import android.widget.EditText;
 
 import mediseen.customtextview.ButtonPlus;
 import mediseen.helpers.FragmentReplace;
+import mediseen.login.CheckStart;
+import mediseen.login.SetAccount;
+import mediseen.work.pearlsantos.mediseen.MainActivity;
 import mediseen.work.pearlsantos.mediseen.R;
 
 
@@ -69,7 +72,7 @@ public class EditAccountSettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_edit_account_settings, container, false);
-        sp = getActivity().getSharedPreferences("Mediseen", Context.MODE_PRIVATE);
+        sp = getActivity().getSharedPreferences(CheckStart.PREFS_NAME, Context.MODE_PRIVATE);
         //retrieving data from the intent
         String username = getArguments().getString("username");
         String password = getArguments().getString("password");
@@ -109,8 +112,12 @@ public class EditAccountSettingsFragment extends Fragment {
                 two.setArguments(bundle2);
                 //saving info in a SharedPreferences
                 SharedPreferences.Editor ed = sp.edit();
-                ed.putString("username", userName.getText().toString());
-                ed.putString("password", passWord.getText().toString());
+                ed.putString(SetAccount.USERNAME, userName.getText().toString());
+                ed.putString(SetAccount.PASSWORD, passWord.getText().toString());
+
+                ed.putString(MainActivity.CLEARUSER, userName.getText().toString());
+                ed.putString(MainActivity.CLEARPASS, passWord.getText().toString());
+
                 ed.putString("medicalCondition", medicalCond.getText().toString());
                 ed.putString("nameOfSC", nameOfSeniorCitizen.getText().toString());
                 ed.putString("nameOfFD", nameOfFamilyDoctor.getText().toString());

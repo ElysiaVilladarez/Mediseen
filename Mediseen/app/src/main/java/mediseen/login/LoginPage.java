@@ -29,22 +29,33 @@ public class LoginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        SpannableStringBuilder builder = new SpannableStringBuilder();
+        SharedPreferences prefs = this.getSharedPreferences(CheckStart.PREFS_NAME, Context.MODE_PRIVATE);
+        String username = prefs.getString(MainActivity.CLEARUSER, "");
+        String password = prefs.getString(MainActivity.CLEARPASS, "");
 
-        String blue = "medi";
-        SpannableString blueSpannable= new SpannableString(blue);
-        blueSpannable.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.backgroundBlue)), 0, blue.length(), 0);
-        builder.append(blueSpannable);
+        if(username.isEmpty() || password.isEmpty()) {
 
-        String green = "seen";
-        SpannableString greenSpannable= new SpannableString(green);
-        greenSpannable.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.backgroundGreen)), 0, green.length(), 0);
-        builder.append(greenSpannable);
+            SpannableStringBuilder builder = new SpannableStringBuilder();
+
+            String blue = "medi";
+            SpannableString blueSpannable = new SpannableString(blue);
+            blueSpannable.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.backgroundBlue)), 0, blue.length(), 0);
+            builder.append(blueSpannable);
+
+            String green = "seen";
+            SpannableString greenSpannable = new SpannableString(green);
+            greenSpannable.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.backgroundGreen)), 0, green.length(), 0);
+            builder.append(greenSpannable);
 
 
-        ((TextViewPlus) findViewById(R.id.mediseenLabel)).setText(builder, TextView.BufferType.SPANNABLE);
-        Picasso.with(this).load(R.drawable.logomark).resizeDimen(R.dimen.logoMarkWidth,
-                R.dimen.logoMarkHeight).into((ImageView) findViewById(R.id.logo));
+            ((TextViewPlus) findViewById(R.id.mediseenLabel)).setText(builder, TextView.BufferType.SPANNABLE);
+            Picasso.with(this).load(R.drawable.icon).resizeDimen(R.dimen.logoMarkWidth,
+                    R.dimen.logoMarkHeight).into((ImageView) findViewById(R.id.logo));
+        } else{
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+            finish();
+        }
 
     }
 
@@ -61,6 +72,10 @@ public class LoginPage extends AppCompatActivity {
         else if(username.isEmpty() || password.isEmpty()){
             Toast.makeText(LoginPage.this, "User does not exist", Toast.LENGTH_SHORT).show();
         } else if (username.equals(userN) && password.equals(pass)){
+            SharedPreferences.Editor edit = prefs.edit();
+            edit.putString(MainActivity.CLEARUSER, username);
+            edit.putString(MainActivity.CLEARPASS, password);
+            edit.commit();
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
             finish();

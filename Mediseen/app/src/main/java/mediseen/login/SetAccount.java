@@ -27,8 +27,8 @@ import mediseen.work.pearlsantos.mediseen.R;
  * Created by elysi on 3/28/2016.
  */
 public class SetAccount extends AppCompatActivity {
-    final static String USERNAME = "USERNAME";
-    final static String PASSWORD = "PASSWORD";
+    public final static String USERNAME = "USERNAME";
+    public final static String PASSWORD = "PASSWORD";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_account);
@@ -47,7 +47,7 @@ public class SetAccount extends AppCompatActivity {
 
 
         ((TextViewPlus) findViewById(R.id.mediseenLabel)).setText(builder, TextView.BufferType.SPANNABLE);
-        Picasso.with(this).load(R.drawable.logomark).resizeDimen(R.dimen.logoMarkWidth,
+        Picasso.with(this).load(R.drawable.icon).resizeDimen(R.dimen.logoMarkWidth,
                 R.dimen.logoMarkHeight).into((ImageView) findViewById(R.id.logo));
 
         ((ButtonPlus) findViewById(R.id.createAccount)).setOnClickListener(new View.OnClickListener() {

@@ -17,13 +17,18 @@
             android:text="EDIT HISTORY"
             android:textColor="@android:color/white"/>
     </FrameLayout>
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/largeMargin"
-        android:paddingRight="@dimen/largeMargin"
+        android:id="@+id/mainFrame"
+        android:paddingRight="@dimen/largeMargin">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linear"
         android:orientation="vertical">
 
         <mediseen.customtextview.TextViewPlus
@@ -65,6 +70,7 @@
         </ScrollView>
 
     </LinearLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"

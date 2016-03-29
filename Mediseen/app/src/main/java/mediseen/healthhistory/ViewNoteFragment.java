@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.LinearLayout;
 
 import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
@@ -62,9 +63,11 @@ public class ViewNoteFragment extends Fragment {
 
                 NotesHistory prevNote = note.getEditHistories().first();
                 if (prevNote == null) {
-                    dialogTitle.setVisibility(View.GONE);
+                    dialogTitle.setText("No history yet");
+                    //dialogTitle.setVisibility(View.GONE);
                     dialogText.setVisibility(View.GONE);
                     dialogDate.setVisibility(View.GONE);
+                    //((LinearLayout) dialog.findViewById(R.id.linear)).setVisibility(View.GONE);
 
                 } else {
                     dialogTitle.setText(prevNote.getTitle());

@@ -43,7 +43,7 @@ public class SplashScreen extends AppCompatActivity {
 
 
         ((TextViewPlus) findViewById(R.id.mediseenLabel)).setText(builder, TextView.BufferType.SPANNABLE);
-        Picasso.with(this).load(R.drawable.logomark).resizeDimen(R.dimen.logoMarkWidth,
+        Picasso.with(this).load(R.drawable.icon).resizeDimen(R.dimen.logoMarkWidth,
                 R.dimen.logoMarkHeight).into((ImageView) findViewById(R.id.logo));
 
 

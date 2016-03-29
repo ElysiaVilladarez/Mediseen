@@ -28,8 +28,7 @@
 
         <activity
             android:name="mediseen.login.SplashScreen"
-            android:label="@string/app_name"
-            android:windowSoftInputMode="adjustPan">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +39,6 @@
         <activity
             android:name="mediseen.login.LoginPage"
             android:label="@string/app_name"
-            android:windowSoftInputMode="adjustPan"
             android:parentActivityName="mediseen.login.SplashScreen">>
         </activity>
         <!--<activity-->

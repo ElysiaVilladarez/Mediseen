@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import mediseen.customtextview.ButtonPlus;
 import mediseen.helpers.FragmentReplace;
+import mediseen.login.CheckStart;
+import mediseen.login.SetAccount;
 import mediseen.work.pearlsantos.mediseen.R;
 
 
@@ -95,9 +97,9 @@ public class AccountSettings extends Fragment {
         }
         else{
             // TO DO: change the default values into <No specified chorva> when the onFirstAccess account settings is implemented
-            sp = getActivity().getSharedPreferences("Mediseen", Context.MODE_PRIVATE);
-            username = sp.getString("username", userName.getText().toString().trim());
-            password = sp.getString("password", passWord.getText().toString().trim());
+            sp = getActivity().getSharedPreferences(CheckStart.PREFS_NAME, Context.MODE_PRIVATE);
+            username = sp.getString(SetAccount.USERNAME, userName.getText().toString().trim());
+            password = sp.getString(SetAccount.PASSWORD, passWord.getText().toString().trim());
             medicalCondition = sp.getString("medicalCondition", medicalCond.getText().toString().trim());
             nameOfSC = sp.getString("nameOfSC", nameOfFamDoc.getText().toString().trim());
             nameOfFD = sp.getString("nameOfFD", nameOfSenCit.getText().toString().trim());

@@ -8,6 +8,7 @@ package mediseen.work.pearlsantos.mediseen;
     import android.app.SearchManager;
     import android.content.Context;
     import android.content.Intent;
+    import android.content.SharedPreferences;
     import android.graphics.Bitmap;
     import android.graphics.BitmapFactory;
     import android.graphics.Canvas;
@@ -42,13 +43,16 @@ package mediseen.work.pearlsantos.mediseen;
     import mediseen.accountsettings.AccountSettings;
     import mediseen.helpers.FragmentReplace;
     import mediseen.home.Greeting;
+    import mediseen.login.CheckStart;
     import mediseen.login.LoginPage;
+    import mediseen.login.SetAccount;
     import mediseen.pilltracker.PillTracker;
     import mediseen.search.SearchFragment;
     import mediseen.viewgroup.FlyOutContainer;
 
     public class MainActivity extends AppCompatActivity {
-
+        public final static String CLEARUSER = "CLEAR_USERNAME";
+        public final static String CLEARPASS = "CLEAR_PASSWORD";
         FlyOutContainer root;
         final String[] menu = {"Home", "Pill Tracker", "Health History", "General Information", "Account Settings", "Log Out"};
         ListView listMenu;
@@ -91,9 +95,11 @@ package mediseen.work.pearlsantos.mediseen;
             int searchImgId = getResources().getIdentifier("android:id/search_button", null, null);
             ImageView v = (ImageView) searchView.findViewById(searchImgId);
             v.setImageResource(R.mipmap.ic_search_white_24dp);
-            int searchHintId = searchView.getResources().getIdentifier("android:id/search_mag_icon", null, null);
+            int searchHintId = getResources().getIdentifier("android:id/search_mag_icon", null, null);
             ImageView w = (ImageView) searchView.findViewById(searchHintId);
-            w.setImageResource(R.mipmap.ic_search_white_24dp);
+            w.setVisibility(View.GONE);
+         //   w.setImageResource(R.mipmap.ic_search_white_24dp);
+
             changeSearchViewTextColor(searchView);
 //            .search_mag_icon)
 
@@ -180,6 +186,11 @@ package mediseen.work.pearlsantos.mediseen;
         }
 
         public void logout(){
+            SharedPreferences sp = this.getSharedPreferences(CheckStart.PREFS_NAME, Context.MODE_PRIVATE);
+            SharedPreferences.Editor edit = sp.edit();
+            edit.putString(CLEARUSER, "");
+            edit.putString(CLEARPASS, "");
+            edit.commit();
             Intent i = new Intent(this, LoginPage.class);
             startActivity(i);
             finish();
